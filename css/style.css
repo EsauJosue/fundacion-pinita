@@ -1,0 +1,35 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Lato', sans-serif;
+}
+.hidden {
+  display: none !important;
+}
+.content {
+  max-width: 1110px;
+  margin: 20px auto;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content__title {
+  color: #4F4B49;
+  border-bottom: 2px solid #009abf;
+  width: 300px;
+  text-align: right;
+  padding: 10px 2px;
+  font-size: 2.5rem;
+}
