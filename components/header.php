@@ -21,22 +21,6 @@
             <li class="menu__inside"><a class="menu__link menu__link-inside" href="registro_talleresc.php">Talleres y Conferencias</a></li>
           </ul>
         </li>
-        <li class="menu__item menu__item-show"><a class="menu__link" href="#">Moderador<img class="menu__arrow" src="images/Iconos/chevron-down.svg"/></a>
-          <ul class="menu__nesting">
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="ctrl_blog.php">Blog</a></li>
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="ctrl_talleres.php">Control de Talleres y Conferencias</a></li>
-          </ul>
-        </li>
-        <li class="menu__item menu__item-show"><a class="menu__link" href="#">Administración<img class="menu__arrow" src="images/Iconos/chevron-down.svg"/></a>
-          <ul class="menu__nesting">
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="ctrl_usuarios.php">Usuarios</a></li>
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="ctrl_programas.php">Programas sociales</a></li>
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="ctrl_beneficiarios.php">Beneficiarios</a></li>
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="ctrl_personalprof.php">Personal Profesional</a></li>
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="reportes.php">Reportes</a></li>
-            <li class="menu__inside"><a class="menu__link menu__link-inside" href="ctrl_ventas.php">Ventas</a></li>
-          </ul>
-        </li>
         <li class="menu__item"> <a class="menu__link" href="login.php">Login</a></li>
       </ul>
       <div class="menu__hamburger"> <img class="menu__img" src="images/Iconos/menu.svg" alt="icono de menu"/></div>

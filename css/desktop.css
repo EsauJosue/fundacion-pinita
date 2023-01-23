@@ -13,3 +13,102 @@ body {
 .hidden {
   display: none !important;
 }
+.title__box {
+  width: 1110px;
+  margin: 0px auto;
+  padding: 8px;
+}
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.content__list {
+  display: block;
+  margin-top: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.content__list__section h3 {
+  font-size: 3rem;
+  margin: 10px 0 0 0;
+  background-color: #4F4B49;
+  padding: 10px;
+  border-radius: 20px 0 0 0;
+}
+.content__list__section-table {
+  margin: 0px auto;
+  width: 100%;
+}
+.content__form {
+  margin: 0 auto;
+  padding-bottom: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  max-width: 400px;
+}
+.content__talleres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.content__talleres_box {
+  width: 300px;
+}
+footer .footer__box {
+  background-color: #4F4B49;
+}
+footer .footer__box__body {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[5];
+  grid-template-columns: repeat(5, auto);
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+      grid-template-areas: "enlaces direccion horarios logo facebook";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer .footer__box__body-logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: logo;
+  width: 150px;
+}
+footer .footer__box__body-links {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: enlaces;
+}
+footer .footer__box__body-links h2 {
+  text-align: left;
+}
+footer .footer__box__body-links li {
+  margin: 0;
+  text-align: left;
+}
+footer .footer__box__body-shedule {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: horarios;
+}
+footer .footer__box__body-socialmedia {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: facebook;
+}

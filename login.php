@@ -1,9 +1,14 @@
 <?php 
 include './components/head.php';
 include './components/header.php';
+session_start();
+
 ?>
+  <div class="title__box">
+    <h2 class="title__box__title">Inicio de Sesión</h2>
+    
+</div>
 <div class="content">
-  <h2 class="content__title">Inicio de Sesión</h2>
   <form action="loginProcess.php" class="content__form" method="POST">
       <div class="content__form__box">
           <label class="content__form__box-label" for="txtUser">Usuario: </label>

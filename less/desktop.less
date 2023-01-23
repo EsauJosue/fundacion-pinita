@@ -1,2 +1,82 @@
 @import "globals.less";
 @import "variables.less";
+.title__box{
+    width: 1110px;
+    margin: 0px auto;
+    padding: 8px;
+}
+.content{ 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    &__list{
+        display: block;
+        margin-top: 0;
+        flex-shrink: 0;
+
+        &__section{
+            h3{
+                font-size: 3rem;
+                margin: 10px 0 0 0;
+                background-color: @color-text;
+                padding: 10px;
+                border-radius: 20px 0 0 0;
+            }
+            &-table{
+                margin: 0px auto;
+                width: 100%;
+            }
+        }
+       
+    }
+    &__form{
+        margin: 0 auto;
+        padding-bottom: 0;
+        flex-shrink: 0;
+        max-width: 400px;
+    }
+    &__talleres{
+        display: flex;
+        flex-wrap: wrap;
+        &_box{
+            width: 300px;
+        }
+    }
+}
+footer{
+    .footer__box{
+        background-color: @color-text;
+        &__body{
+             max-width: 1300px;
+             margin: 0 auto;
+             display: grid;
+             grid-template-columns: repeat(5, auto);
+             grid-template-rows: 1fr;
+             grid-template-areas: 
+             "enlaces direccion horarios logo facebook";
+            align-items: center;
+            &-logo{
+                grid-area: logo;
+                width: 150px;
+ 
+             }
+            &-links{
+                 grid-area: enlaces;
+                 h2{
+                     text-align: left;
+                 }
+                 li{
+                     margin: 0;
+                     text-align: left;
+                 }
+             }
+            &-shedule{
+                 grid-area: horarios;
+             }
+            &-socialmedia{
+                 grid-area: facebook;  
+             }
+         }
+     }
+}

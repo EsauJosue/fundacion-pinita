@@ -2,8 +2,12 @@
 include './components/head.php';
 include './components/header.php';
 ?>
+
+<div class="title__box">
+    <h2 class="title__box__title">Fundación Pinita</h2>
+</div>
 <div class="content">
-  <h1>Fundación Pinita</h1>
+  
 </div>
 <?php
 include './components/footer.php';

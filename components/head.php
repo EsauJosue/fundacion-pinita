@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/tablet.css" media="screen and (min-width: 768px)"/>
     <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 1024px)"/>
     <link rel="stylesheet" href="css/menu.css"/>
-    <link rel="stylesheet" href="css/form.css"/>
+    <!-- <link rel="stylesheet" href="css/form.css"/> -->
+    <link rel="stylesheet" href="css/table.css"/>
+
     <link rel="shortcut icon" href="/images/favicon.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>

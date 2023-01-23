@@ -1,0 +1,191 @@
+@import "globals.less";
+@import "variables.less";
+
+.title__box{
+    max-width: 1110px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &__title{
+        color: @color-text;
+        border-bottom: 2px solid @color-primary;
+        text-align: right;
+        padding: 10px 2px;
+        font-size: 2.5rem;
+        margin: 10px auto;
+        width: 95%;
+    }
+    &__usr{
+        text-align: right;
+        padding: 10px 2px;
+        font-size: 1.4rem;
+        margin: 2px auto;
+        width: 95%;
+    }
+}
+
+.content{ 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 45px;
+    &__detailsBox{
+        max-width: 1000px;
+        padding: 20px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        ul{
+            border: 2px solid @color-secondary;
+            border-radius: 20px;
+            list-style: none;
+            li{
+                margin: 35px;
+                font-size: 1.6rem;
+                color: @color-text;
+                display: flex;
+                justify-content: space-between;
+                strong{
+                    margin-right: 35px;
+                }
+            }
+        }
+    }
+    &__list{
+        display: block;
+        margin-top: 0;
+        width: 65%;
+        &__section{
+            h3{
+                font-size: 3rem;
+                margin: 10px 0 0 0;
+                background-color: @color-text;
+                padding: 10px;
+                border-radius: 20px 0 0 0;
+            }
+            &-table{
+                margin: 0px auto;
+                width: 100%;
+                border-radius: 0 0 20px 0;
+            }
+        }
+       
+    }
+    &__form{
+        margin: 0 auto;
+        padding-bottom: 0;
+    }
+    &__talleres{
+        display: flex;
+        flex-wrap: wrap;
+        &_box{
+            width: 200px;
+        }
+    }
+}
+footer{
+    .footer__header{
+        &__box{
+             max-width: 1110px;
+             margin: 0 auto;
+             display: grid;
+             grid-template-rows: 1fr;
+             grid-template-columns: 1fr 1fr 1fr;
+             grid-template-areas: unset;
+             grid-template-areas:
+                 "phone cellphone email";
+             font-size: 1.4rem;
+             line-height: 2rem;
+             font-family: 'Inter', sans-serif;
+             padding: 20px 10px;
+             &__phone{
+                 grid-area: phone;
+                 justify-content: flex-start;
+             }
+             &__cellphone{
+                 grid-area: cellphone;
+                 justify-content: flex-start;
+             }
+             &__email{
+                 grid-area: email;
+                 justify-content: flex-start;
+     
+             }
+        }
+     }
+     .footer__box{
+         background-color: @color-text;
+         &__body{
+             max-width: 1110px;
+             margin: 0 auto;
+             display: grid;
+             grid-template-columns: repeat(3, auto);
+             grid-template-rows: 1fr 1fr;
+             grid-template-areas: 
+             "enlaces horarios direccion"
+             "logo logo facebook";
+             flex-direction: row;
+             align-items: flex-start;
+             justify-content: space-around;
+             &-logo{
+                grid-area: logo;
+                width: 150px;
+ 
+             }
+             &-links{
+                 grid-area: enlaces;
+                 h2{
+                     text-align: left;
+                 }
+                 li{
+                     margin: 0;
+                     text-align: left;
+                 }
+             }
+             &-shedule{
+                 grid-area: horarios;
+             }
+             &-socialmedia{
+                 grid-area: facebook;
+             }
+         }
+         .footer__foot{
+             background-color: @color-secondary;
+             display: flex;
+             flex-direction: row;
+             align-items: center;
+             justify-content: center;
+
+             height: 25px;
+             margin: 0;
+             gap: 10px;
+             p{
+                 margin: 0;
+             }
+             .divisor{
+                 display: flex;
+             }
+             .rights{
+                 
+                 p{
+                     font-size: @font-size-md;
+                     font-weight: @font-regular;
+                     text-align: center;
+                     margin: 0;
+                     border-bottom: none;
+     
+                 }
+             }
+             .link__jmc{
+                 a{
+                     font-size: @font-size-md;
+                     text-decoration: none;
+                 
+                 }
+             }
+         }
+     }
+    
+ 
+ }
+ 

@@ -2,8 +2,9 @@
 include './components/head.php';
 include './components/header.php';
 ?>
+  <h2 class="title">Reportes</h2>
+
 <div class="content">
-  <h2 class="content__title">Reportes</h2>
 </div>
 <?php
 include './components/footer.php';
