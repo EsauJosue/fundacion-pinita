@@ -1,5 +1,6 @@
 @import "globals.less";
 @import "variables.less";
+
 .cta-imagen{
     border: none;    
 }
@@ -66,7 +67,8 @@
     }
 }
 .content{
-    max-width: 1110px;
+    width: 100vw;
+    overflow: hidden;
     margin: 10px auto;
     display: flex;
     justify-content: center;
@@ -75,6 +77,47 @@
     align-items: center;
     gap: 10px;
     font-size: 1.4rem;
+    &__buttons{
+        margin: 20px auto;
+        &__items{
+           display: grid;
+           grid-template-columns: auto auto;
+           grid-template-rows: auto auto auto;
+           grid-template-areas: "staff psociales"
+                                "apoyos reportes"
+                                "ecommerce usuarios";
+           justify-content: center;
+           align-items: center;
+           grid-gap: 35px;
+           margin: 30px auto;
+          
+           &-item{
+            list-style: none;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 140px;
+            a{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                text-decoration: none;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                
+                img{
+                    width: 75px;
+                    height: auto;
+                }
+            }
+           }
+        }
+    }
+    &__wallpaper{
+        display: none;
+    }
 
     &__message{
         text-align: center;
