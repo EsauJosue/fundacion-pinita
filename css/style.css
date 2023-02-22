@@ -91,6 +91,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -102,6 +106,33 @@ body {
           align-items: center;
   gap: 10px;
   font-size: 1.4rem;
+  height: 70vh;
+}
+.content__menu-principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+.content__menu-principal__button button {
+  width: 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content__menu-principal__button button img {
+  width: 75px;
+  margin: 10px;
 }
 .content__buttons {
   margin: 20px auto;
@@ -389,6 +420,60 @@ body {
 }
 .content__form__box select option {
   font-size: 1.6rem;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  visibility: hidden;
+  height: 100vh;
+}
+.overlay.active {
+  visibility: visible;
+}
+.popup {
+  background: #f8f8f8;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  padding: 20px;
+  opacity: 0;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  scroll-behavior: auto;
+  z-index: 1;
+}
+.popup .btn-cerrar-popup {
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  text-align: right;
+  color: #BBBBBB;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+.popup .btn-cerrar-popup img {
+  width: 20px;
+}
+.popup .btn-cerrar-popup:hover {
+  color: red;
+}
+.popup.active {
+  opacity: 1;
 }
 footer {
   display: -webkit-box;

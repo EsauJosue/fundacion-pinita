@@ -18,7 +18,7 @@ include 'components/permisos-menu.php';
 <section class="content__buttons">
       <ul class="content__buttons__items">
         <li class="content__buttons__items-item">
-          <a href="">
+          <a href="/ctrl_staff.php">
             <img src="/images/Iconos/teamwork.png" alt="">Staff
           </a>
         </li>
