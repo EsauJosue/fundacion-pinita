@@ -23,27 +23,27 @@ include 'components/permisos-menu.php';
           </a>
         </li>
         <li class="content__buttons__items-item">
-          <a href="">
+          <a href="/ctrl_programas.php">
             <img src="/images/Iconos/social.png" alt="">Programas Sociales
           </a>
         </li>
         <li class="content__buttons__items-item">
-          <a href="">
+          <a href="/ctrl_beneficiarios.php">
             <img src="/images/Iconos/agreement.png" alt="">Aceptación de apoyos
           </a>
         </li>
         <li class="content__buttons__items-item">
-          <a href="">
+          <a href="/reportes.php">
             <img src="/images/Iconos/report.png"" alt="">Reportes
           </a>
         </li>
         <li class="content__buttons__items-item">
-          <a href="">
+          <a href="/ctrl_ventas.php">
             <img src="/images/Iconos/online-shop.png" alt="">Ecommerce
           </a>
         </li>
         <li class="content__buttons__items-item">
-          <a href="">
+          <a href="/verUsuarios.php">
             <img src="/images/Iconos/group.png" alt="">Usuarios
           </a>
         </li>

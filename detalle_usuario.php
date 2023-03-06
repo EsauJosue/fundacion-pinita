@@ -18,6 +18,21 @@ include './model/conexion.php'
 </div>
 
 <div class="content">
+<?php 
+include './components/sidebar-menu.php'
+?>
+  <style>
+  #item-usuarios {
+    border-radius: 5px;
+    background-color: rgb(255,182,0,100%);
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  }
+  #item-usuarios a{
+    color: #222;
+  }
+</style>
 <?php
 $usuario = $_GET['id'];
 $consulta = $bd->query("SELECT * FROM usuarios WHERE usuario =  '$usuario'");
@@ -26,15 +41,16 @@ $beneficiario = $consulta->fetchAll(PDO::FETCH_OBJ);
 foreach ($beneficiario as $dato){
 ?>
 <div class="content__detailsBox">
+
     <ul>
-        <li><strong>Usuario:</strong><?php echo $dato->usuario;?></li>
-        <li><strong>Nombre: </strong><?php echo $dato->nombre;?></li>
-        <li><strong>Nacionalidad: </strong><?php echo $dato->nacionalidad;?></li>
-        <li><strong>Fecha de Nacimiento: </strong><?php echo $dato->fnacimiento;?></li>
-        <li><strong>Domicilio: </strong><?php echo $dato->domicilio;?></li>
-        <li><strong>Teléfono: </strong><?php echo $dato->telefono;?></li>
-        <li><strong>Perfil: </strong><?php echo $dato->perfil;?></li>
-        <li><strong>Observaciones: </strong><?php echo $dato->observaciones;?></li>
+        <li><strong>Usuario:</strong><br><?php echo $dato->usuario;?></li>
+        <li><strong>Nombre: </strong><br><?php echo $dato->nombre;?></li>
+        <li><strong>Nacionalidad: </strong><br><?php echo $dato->nacionalidad;?></li>
+        <li><strong>Fecha de Nacimiento: <br></strong><?php echo $dato->fnacimiento;?></li>
+        <li><strong>Domicilio: </strong><br><?php echo $dato->domicilio;?></li>
+        <li><strong>Teléfono: </strong><br><?php echo $dato->telefono;?></li>
+        <li><strong>Perfil: </strong><br><?php echo $dato->perfil;?></li>
+        <li><strong>Observaciones: </strong><br><?php echo $dato->observaciones;?></li>
     </ul>
     <button onclick="regresar()" class="btn-regresar">Regresar</button>
 </div>
@@ -48,5 +64,5 @@ foreach ($beneficiario as $dato){
 }else{
     echo "Error en el Sistema";
 }
-include './components/footer.php';
+include './components/footer-staff.php';
 ?>

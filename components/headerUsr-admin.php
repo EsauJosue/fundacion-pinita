@@ -1,9 +1,9 @@
 
 <header> 
-  <!-- <div class="menu-top"> 
-    <p>Bienvenido a Fundación Pinita</p>
-    <a class="menu-top__link" href="privacidad.php">Aviso de Privacidad</a>
-  </div> -->
+  <div class="menu-top"> 
+    <p>Sistema Fundación Pinita</p>
+    <a class="menu-top__link" href="salir.php">Cerrar Sesión</a>
+  </div>
   <nav class="menu"> 
     <section class="menu__container"> <img class="menu__logo" src="/images/logotipo.svg"/>
       <ul class="menu__links">
