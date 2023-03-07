@@ -28,6 +28,14 @@ function cerrarPopup(element){
         popup.classList.remove('popup');
     }
 
+
+function calcularTotal(precio,idCantidad,idTotal){
+    var cantidad = document.getElementById(idCantidad).value;
+    var total = cantidad * precio;
+    document.getElementById(idTotal).innerHTML = total;
+    console.log(idCantidad,idTotal);
+}
+
 // function abrirPopup(element){
 //     const overlay = document.createElement('div');
 //     overlay.innerHTML('<div>Hola Mundo</div>')

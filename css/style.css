@@ -125,6 +125,12 @@ body {
   margin: 10px;
   padding: 5px;
 }
+#btn-cerrar-popup-bottom {
+  background-color: #009abf;
+  width: 90%;
+  text-decoration: none;
+  color: #ffffff;
+}
 .content {
   width: 100vw;
   overflow: hidden;
@@ -358,6 +364,164 @@ body {
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   gap: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.content__tienda_box-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #4F4B49;
+  gap: 25px;
+}
+.content__tienda_box-form .item-total-list {
+  border-top: 1px solid #4F4B49;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+.content__tienda_box-form-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  gap: 5px;
+}
+.content__tienda_box-form-precio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+.content__tienda_box-form .txtCantidad {
+  width: 45px;
+}
+.content__tienda_box-form-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #4F4B49;
+  font-size: 1.2rem;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.content__tienda_box-form-title img {
+  width: 70px;
+}
+.content__tienda_box-form-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.content__tienda_box-form-details-img {
+  width: 75px;
+}
+.content__tienda_box-form-details-text {
+  width: 100%;
+}
+.content__tienda_box-form-details-text ul {
+  list-style: none;
+}
+.content__tienda_box-form-details-text ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.content__tienda_box-form-details-text ul li p {
+  color: #4F4B49;
+}
+.content__tienda_box-form h2 {
+  color: #009abf;
+  text-align: center;
+  border-bottom: 1px solid #009abf;
+  width: 100%;
+}
+.content__tienda_box-form h4 {
+  text-align: center;
+  width: 100%;
+  color: #4F4B49;
+  background-color: #ffb600;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+.content__tienda_box-form-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+.content__tienda_box-form-input-botones {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.content__tienda_box-form-input label {
+  font-size: 1.4rem;
+  text-align: left;
+  color: #4F4B49;
+}
+.content__tienda_box-form-input input {
+  width: 230px;
+  height: 35px;
+  padding: 5px;
+}
+.content__tienda_box-form-input button {
+  width: 100%;
+}
+.content__tienda_box-img {
+  width: 100%;
+  padding: 10px;
 }
 .content__tienda_box-name {
   font-size: 2rem;
@@ -536,7 +700,7 @@ body {
 .content__form__box-cta {
   font-family: inherit;
   background-color: #ffb600;
-  color: #ffffff;
+  color: #4F4B49;
   border: none;
   font-weight: 300;
   padding: 0.7em 0;
