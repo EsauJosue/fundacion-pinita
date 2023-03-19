@@ -39,8 +39,10 @@ if(!isset($_POST['oculto'])){
         $sentenciam = $bd->prepare("INSERT INTO pedidos(fecha,nombreCliente,telefono,email,calle,numero,fraccionamiento,ciudad,estado,cp,id_producto,cantidad,total,estatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);"); 
         $res = $sentenciam->execute([$fecha,$nombreCliente,$telefono,$email,$calle,$numero,$fraccionamiento,$ciudad,$estado,$cp,$id_producto,$cantidad,$total,$status]);      
         if($res === TRUE){
-            echo "Exito";
-            header("Location: notificacion-confirmacionPedido.php", true, 303);
+            echo "Éxito";
+            $id_generado = $bd->lastInsertId();
+            //echo "El id de este pedido es: " . $id_generado;
+            header("Location: pagoPedido.php?pedido=".$id_generado, true, 303);
         }else{
             echo "Error";
             header('Location: notificacion-error.php',true,303);
