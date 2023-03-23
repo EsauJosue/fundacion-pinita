@@ -18,8 +18,15 @@ include './model/conexion.php'
     </div>
 </div>
 <div class="content">
-<?php 
-include './components/sidebar-menu.php'
+<?php
+$perfilUsr = $_SESSION['perfilUsr'];
+if($perfilUsr == 'administrador'){
+  include './components/sidebar-menu-admin.php';
+}
+if($perfilUsr == 'moderador'){
+  include './components/sidebar-menu-mode.php';
+}
+
 ?>
 <style>
   #item-beneficiarios {

@@ -15,6 +15,15 @@ include 'model/conexion.php'
     </div>
 </div>
 <div class="content">
+  <?php
+  $perfilUsr = $_SESSION['perfilUsr'];
+  if($perfilUsr == 'administrador'){
+    include './components/sidebar-menu-admin.php';
+  }
+  if($perfilUsr == 'moderador'){
+    include './components/sidebar-menu-mode.php';
+  }
+  ?>
   <div class="content__talleres">
     <?php
       $consulta = $bd->query("SELECT id_taller,nombre,fecha,hora,lugar,tipo,ponentes,detalles,precio,contacto FROM ctrl_talleres;");

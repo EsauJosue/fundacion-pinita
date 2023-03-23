@@ -6,6 +6,15 @@ include './components/header.php';
     <h2 class="title__box__title">Registro de Usuario</h2>
 </div>
 <div class="content">
+    <?php 
+    $perfilUsr = $_SESSION['perfilUsr'];
+    if($perfilUsr == 'administrador'){
+      include './components/sidebar-menu-admin.php';
+    }
+    if($perfilUsr == 'moderador'){
+      include './components/sidebar-menu-mode.php';
+    }
+    ?>
   <form action="insert_registro.php" class="content__form" method="POST">
       <div class="content__form__box">
           <label class="content__form__box-label" for="txtUser">Usuario: </label>

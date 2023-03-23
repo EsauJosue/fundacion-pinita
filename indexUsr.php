@@ -16,39 +16,17 @@ include 'components/permisos-menu.php';
 </div>
 <div class="content">
 <section class="content__buttons">
-      <ul class="content__buttons__items">
-        <li class="content__buttons__items-item">
-          <a href="/ctrl_staff.php">
-            <img src="/images/Iconos/teamwork.png" alt="">Staff
-          </a>
-        </li>
-        <li class="content__buttons__items-item">
-          <a href="/ctrl_programas.php">
-            <img src="/images/Iconos/social.png" alt="">Programas Sociales
-          </a>
-        </li>
-        <li class="content__buttons__items-item">
-          <a href="/ctrl_beneficiarios.php">
-            <img src="/images/Iconos/agreement.png" alt="">Aceptación de apoyos
-          </a>
-        </li>
-        <li class="content__buttons__items-item">
-          <a href="/reportes.php">
-            <img src="/images/Iconos/report.png"" alt="">Reportes
-          </a>
-        </li>
-        <li class="content__buttons__items-item">
-          <a href="/ctrl_ventas.php">
-            <img src="/images/Iconos/online-shop.png" alt="">Ecommerce
-          </a>
-        </li>
-        <li class="content__buttons__items-item">
-          <a href="/verUsuarios.php">
-            <img src="/images/Iconos/group.png" alt="">Usuarios
-          </a>
-        </li>
-      </ul>
-    </section>
+<?php
+  $tipoUsr = $_SESSION['perfilUsr'];
+  if ($tipoUsr == 'administrador'){
+    include 'menu-index-admin.php';
+  }
+  if($tipoUsr == 'moderador'){
+    include 'menu-index-mode.php';
+  }
+
+?>     
+</section>
    <img src="/images/desk.jpg" alt="" class="content__wallpaper">
 </div>
 

@@ -18,7 +18,13 @@ include './model/conexion.php'
 </div>
 <div class="content">
 <?php 
-include './components/sidebar-menu.php'
+$perfilUsr = $_SESSION['perfilUsr'];
+if($perfilUsr == 'administrador'){
+  include './components/sidebar-menu-admin.php';
+}
+if($perfilUsr == 'moderador'){
+  include './components/sidebar-menu-mode.php';
+}
 ?>
   <style>
   #item-usuarios {
@@ -45,7 +51,7 @@ include './components/sidebar-menu.php'
       $apoyos = $consulta->fetchAll(PDO::FETCH_OBJ);
     ?>
     <section class="content__list__mobile__section">
-    <a href="#" id="btn-cerrar-popup-staffList" class="btn-cerrar-popup" onclick="cerrarPopup('#list-usuario')"><img src="/images/Iconos/xmark-solid.svg" alt="" ></a>
+    <a href="#" id="btn-cerrar-popup-staffList" class="btn-cerrar-popup" onclick="cerrarPopup('#list-usuarios')"><img src="/images/Iconos/xmark-solid.svg" alt="" ></a>
 
       <h3>Usuarios</h3>
         <?php 
