@@ -11,10 +11,6 @@ include './model/conexion.php'
  <div class="title__box">
  <a href="/indexUsr.php"><img src="/images/Iconos/home.png" alt=""></a>
     <h2 class="title__box__title">Control de Talleres y Conferencias</h2>
-    <div class="title__box__usr">
-        <p class="title__box__usr-name"><strong>Usuario:</strong>  <?php  echo $_SESSION['nombreUsr'] ?></p>
-        <p class="title__box__usr-perfil"><strong>Perfil:</strong> <?php  echo $_SESSION['perfilUsr'] ?></p>
-    </div>
 </div>
 <div class="content">
     <?php
@@ -174,7 +170,7 @@ include './model/conexion.php'
           }
           ?>
         <?php
-          include 'footer.php';
+          include 'footer-staff.php';
         ?>
   </div>
 </div>
@@ -184,5 +180,5 @@ include './model/conexion.php'
 }else{
     echo "Error en el Sistema";
 }
-include './components/footer.php';
+include './components/footer-staff.php';
 ?>

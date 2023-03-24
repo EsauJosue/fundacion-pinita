@@ -1,8 +1,7 @@
 
 <header> 
 <div class="menu-top"> 
-  <p>Bienvenido a Fundación Pinita</p>
-  <a class="menu-top__link" href="privacidad.php">Aviso de Privacidad</a>
+  <?php include 'userlog.php';?>
 </div>
 <nav class="menu"> 
   <section class="menu__container"> <img class="menu__logo" src="/images/logotipo.svg"/>

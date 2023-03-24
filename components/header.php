@@ -1,4 +1,5 @@
 
+
 <header> 
   <div class="menu-top"> 
     <p>Bienvenido a Fundación Pinita</p><a class="menu-top__link" href="privacidad.html">Aviso de Privacidad</a>
@@ -27,3 +28,4 @@
     </section>
   </nav>
 </header>
+
