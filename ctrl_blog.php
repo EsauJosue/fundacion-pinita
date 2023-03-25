@@ -58,7 +58,7 @@ if($perfilUsr == 'moderador'){
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtContenido">Contenido: </label>
-                <textarea  placeholder="Ingrese el contenido del Post" name="blog_contenido" class="content__form__box-input" id="txtContenido" required></textarea>
+                <textarea  placeholder="Ingrese el contenido del Post" wrap="soft" name="blog_contenido" class="content__form__box-input" id="txtContenido" required></textarea>
             </div>
             <div class="content__form__box">
                     <label class="content__form__box-label " for="ctaImagen">Imagen: </label>
