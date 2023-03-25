@@ -47,26 +47,26 @@ if($perfilUsr == 'moderador'){
             <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#RegBlog')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
             <h3>Nuevo Post</h3>
             <!-- Formulario  -->
-            <form action="insert_blog.php" class="content__form" method="POST">
+            <form action="insert_post.php" class="content__form" method="POST" enctype="multipart/form-data" id="" accept-charset="utf-8">
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtTitulo">Título: </label>
                 <input type="text" placeholder="Ingrese el título del Post" name="blog_titulo" class="content__form__box-input" id="txtTitulo" required maxlength="80">
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtExtracto">Extracto: </label>
-                <input type="text" placeholder="Ingrese su nombre completo" name="blog_extracto" class="content__form__box-input" id="txtExtracto" required>
+                <textarea  placeholder="Ingrese un extracto del post" name="blog_extracto" class="content__form__box-input" id="txtExtracto" required rows="5" maxlength="120"></textarea>
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtContenido">Contenido: </label>
-                <input type="text" placeholder="Ingrese su nombre completo" name="blog_extracto" class="content__form__box-input" id="txtContenido" required>
+                <textarea  placeholder="Ingrese el contenido del Post" name="blog_contenido" class="content__form__box-input" id="txtContenido" required></textarea>
             </div>
             <div class="content__form__box">
-                <label class="content__form__box-label" for="fileImagen">Imagen: </label>
-                <input type="file" placeholder="Seleccione una imagen" name="blog_imagen" class="content__form__box-input" id="fileImagen" required>
+                    <label class="content__form__box-label " for="ctaImagen">Imagen: </label>
+                    <input type="file" placeholder="" name="foto" class="cta-imagen" id="ctaImagen" accept="image/jpeg, image/png">
             </div>
             <input type="hidden" name="oculto" value=1>
             <div class="content__form__box">
-                <button type="submit" value="" class="content__form__box-cta">Guardar</button>
+                <button type="submit" value="" class="content__form__box-cta" name="guardar" onclick="return confirmacion()">Guardar</button>
             </div>
             </form>
         </div>
@@ -77,5 +77,5 @@ if($perfilUsr == 'moderador'){
 }else{
     echo "Error en el Sistema";
 }
-include './components/footer.php';
+include './components/footer-staff.php';
 ?>

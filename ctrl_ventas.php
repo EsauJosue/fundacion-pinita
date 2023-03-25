@@ -144,7 +144,7 @@ if($perfilUsr == 'moderador'){
                 </div>
                 <div class="content__form__box">
                     <label class="content__form__box-label " for="ctaImagen">Imagen: </label>
-                    <input type="file" placeholder="" name="foto" class="cta-imagen id="ctaImagen" >
+                    <input type="file" placeholder="" name="foto" class="cta-imagen" id="ctaImagen" accept="image/jpeg, image/png">
                 </div>
                 <div class="content__form__box">
                     <label class="content__form__box-label" for="txtExistencia">Existencia: </label>

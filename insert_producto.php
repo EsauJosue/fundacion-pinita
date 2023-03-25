@@ -10,6 +10,7 @@ include 'model/conexion.php';
     $existencia = $_POST['existencia-product'];
     $permitido=array("image/png","image/jpeg");
     if(isset($_REQUEST['guardar'])){
+        echo 'guardar';
         if (is_uploaded_file($_FILES['foto']['tmp_name'])) {
 
             $datos_imagen = file_get_contents($_FILES['foto']['tmp_name']);
@@ -30,10 +31,10 @@ include 'model/conexion.php';
             $consulta->bindParam(6, $datos_imagen, PDO::PARAM_LOB);
             $consulta->bindParam(7, $tipoArchivo, PDO::PARAM_STR,40);
             $consulta->execute();
-            header('Location: notificacion-confirmacion.php',true,303);
+            header('Location: notificacion-confirmacion.php');
        
         }else{
-            header('Location: notificacion-error.php',true,303);
+            header('Location: notificacion-error.php');
         }
             //if($consulta === TRUE){
             //     header('Location: notificacion-confirmacion.php',true,303);

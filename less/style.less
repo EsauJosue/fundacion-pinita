@@ -189,24 +189,24 @@
     &__buttons{
         margin: 20px auto;
         &__items{
-           display: grid;
-           grid-template-columns: auto auto;
-           grid-template-rows: auto auto auto;
-           grid-template-areas: "staff psociales"
-                                "apoyos reportes"
-                                "ecommerce usuarios";
+           display: flex;
+           flex-wrap: wrap;
            justify-content: center;
            align-items: center;
-           grid-gap: 35px;
+           grid-gap: 15px;
            margin: 30px auto;
           
            &-item{
             list-style: none;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            //box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             padding: 10px;
             border-radius: 10px;
-            width: 140px;
-            height: 140px;
+            border: 1px solid @color-primary;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
            
             a{
                 display: flex;
@@ -215,12 +215,12 @@
                 text-decoration: none;
                 align-items: center;
                 justify-content: center;
-                gap: 10px;
                 color: @color-primary;
+                font-size: 1.1rem;
 
                 
                 img{
-                    width: 75px;
+                    width: 35px;
                     height: auto;
                 }
             }
@@ -542,6 +542,10 @@
         }
     }
     &__form{
+        h3{
+            text-align: center;
+            color: @color-primary;
+        }
         &__taller{
             padding: 5px;
         }  
@@ -549,6 +553,7 @@
             height: 75px;
             vertical-align: super;
         }
+        height: 100%;
         width: 95%;
         // margin: auto;
         border-radius: 1em;
@@ -556,7 +561,7 @@
         &__box{
             width: 100%;
             display: grid;
-            gap: 1em;
+            gap: 5px;
             grid-auto-columns: 100%;
             margin: 10px;
             &-label{
@@ -565,7 +570,7 @@
             &-input{
                 font-family: inherit;
                 font-size: 1.4rem;
-                padding: .8em 1em;
+                padding: .8em;
                 outline: none;
                 border: none;
                 border: 1px solid #bbb0b0;
@@ -575,7 +580,7 @@
              
             }
             ::placeholder{
-                font-size: 1.4rem;       
+                font-size: 1.2rem;     
             }
             &__input--message{
                 resize: none;
@@ -868,16 +873,18 @@ footer{
         }
     }   
     .footer__foot{
-        background-color: @color-secondary;
+        background-color: @color-text;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: @color-text;
+        color: @color-white;
         height: 81px;
         margin: 0;
         p{
             margin: 0;
+            color: @color-white;
+
         }
         .divisor{
             display: none;
@@ -889,17 +896,25 @@ footer{
                 font-weight: @font-regular;
                 text-align: center;
                 margin: 0;
-                border-bottom: 1px solid @color-white;
+                color: @color-white;
+
+               
             }
         }
         .link__jmc{
             a{
                 font-size: @font-size-md;
                 text-decoration: none;
-                color: @color-text;
+                color: @color-white;
            
             }
         }
     }
 
+}
+#txtExtracto{
+    height: 100px;
+}
+#txtContenido{
+    height: 200px;
 }
