@@ -54,7 +54,7 @@ if($perfilUsr == 'moderador'){
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtExtracto">Extracto: </label>
-                <textarea  placeholder="Ingrese un extracto del post" name="blog_extracto" class="content__form__box-input" id="txtExtracto" required rows="5" maxlength="120"></textarea>
+                <textarea  placeholder="Ingrese un extracto del post" name="blog_extracto" class="content__form__box-input" id="txtExtracto" required rows="5" maxlength="350"></textarea>
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtContenido">Contenido: </label>

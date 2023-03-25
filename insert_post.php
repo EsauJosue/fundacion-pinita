@@ -31,9 +31,9 @@ if(!isset($_POST['oculto'])){
             }
             $nombreArchivo=$_FILES['foto']['name'];
             $consulta = $bd->prepare("INSERT INTO blogpost(titulo,extracto,contenido,imagen,tipoimagen,id_staff,fecha) VALUES (?,?,?,?,?,?,?);"); 
-            $consulta->bindParam(1, $titulo, PDO::PARAM_STR,80);
-            $consulta->bindParam(2, $extracto, PDO::PARAM_STR,120);
-            $consulta->bindParam(3, $contenido, PDO::PARAM_STR);
+            $consulta->bindParam(1, $titulo, PDO::PARAM_STR,120);
+            $consulta->bindParam(2, $extracto, PDO::PARAM_STR,350);
+            $consulta->bindParam(3, $contenido, PDO::PARAM_STR,5000);
             $consulta->bindParam(4, $datos_imagen, PDO::PARAM_LOB);
             $consulta->bindParam(5, $tipoArchivo, PDO::PARAM_STR,40);
             $consulta->bindParam(6, $staff, PDO::PARAM_STR,80);

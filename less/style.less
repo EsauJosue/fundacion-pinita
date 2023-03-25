@@ -123,6 +123,69 @@
     gap: 2px;
     font-size: 1.4rem;
     height: 100%;
+    &__blog{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        &_box{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            &-title{
+                color: @color-primary;
+                margin: 10px auto;
+                font-size: 1.4rem;
+            }
+            &-img{
+                width: 100%;
+                height: auto;
+            }
+            &-autor{
+                font-size: 1.2rem;
+                color: @color-text;
+                margin: 5px;
+                text-align: left;
+                width: 90%;
+
+            }
+            &-fecha{
+                font-size: 1rem;
+                color: @color-text;
+                margin: 0px;
+                text-align: left;
+                width: 90%;
+            }
+            &-extracto{
+                color: @color-text;
+                font-size: 1.3rem;
+                border-top: 1px solid @color-text;
+                width: 90%;
+                margin: 10px auto;
+
+            }
+            &-link{
+                text-decoration: none;
+                background-color: @color-primary;
+                color: @color-white;
+                width: 100px;
+                height: 20px;
+                border-radius: 10px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+            }
+        }
+    }
 
     &__detailsBox{
         ul{
