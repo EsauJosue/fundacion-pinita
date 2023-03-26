@@ -1103,6 +1103,11 @@ footer .footer__header-icon img {
   height: auto;
   margin: 0 10px;
 }
+footer .footer__box {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 footer .footer__box__body {
   display: -webkit-box;
   display: -ms-flexbox;

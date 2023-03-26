@@ -36,7 +36,7 @@ if($perfilUsr == 'moderador'){
 </style>
     <div class="content__menu-principal">
        <div class="content__menu-principal__button">
-            <button class="btn-abrir-popup" onclick="abrirPopup('#RegBlog')"><img src="/images/Iconos/escribir.png" alt="">Nueva Entrada</button>
+            <button class="btn-abrir-popup" onclick="abrirPopup('#RegBlog')"><img src="/images/Iconos//entrada.png" alt="">Nueva Entrada</button>
        </div>
        <div class="content__menu-principal__button">
             <button class="btnPop-lstaff" onclick="abrirPopup('#ListBlog')"><img src="/images/Iconos/libro-abierto.png" alt="">Ver/Editar Entradas</button>

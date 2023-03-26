@@ -41,22 +41,22 @@ if($perfilUsr == 'moderador'){
 </style>
     <div class="content__menu-principal">
         <div class="content__menu-principal__button">
-                <button class="btn-abrir-popup" onclick="abrirPopup('#e-catalogoProductos')"><img src="/images/catalogo.svg" alt="">Catálogo de Productos</button>
+                <button class="btn-abrir-popup" onclick="abrirPopup('#e-catalogoProductos')"><img src="/images/Iconos/catalogo-productos.png" alt="">Catálogo Productos</button>
         </div>
         <div class="content__menu-principal__button">
-                <button class="btn-abrir-popup" onclick="abrirPopup('#e-productos')"><img src="/images/ajusteInventario.svg" alt="">Registro de Productos</button>
+                <button class="btn-abrir-popup" onclick="abrirPopup('#e-productos')"><img src="/images/Iconos/registro-productos.png" alt="">Registro Productos</button>
         </div>
         <!-- <div class="content__menu-principal__button">
                 <button class="btn-abrir-popup" onclick="abrirPopup('#list-usuarios')"><img src="/images/ajusteInventario.svg" alt="">Ajuste de Inventarios</button>
         </div> -->
         <div class="content__menu-principal__button">
-                <button class="btn-abrir-popup" onclick="abrirPopup('#list-usuarios')"><img src="/images/ventas.svg" alt="">Control de Ventas</button>
+                <button class="btn-abrir-popup" onclick="abrirPopup('#list-usuarios')"><img src="/images/Iconos/control-ventas.png" alt="">Control Ventas</button>
         </div>
         <div class="content__menu-principal__button">
-                <button class="btn-abrir-popup" onclick="abrirPopup('#e-pedidos')"><img src="/images/pedido.png" alt="">Pedidos</button>
+                <button class="btn-abrir-popup" onclick="abrirPopup('#e-pedidos')"><img src="/images/Iconos/pedidos.png" alt="">Pedidos</button>
         </div>
         <div class="content__menu-principal__button">
-                <button class="btn-abrir-popup" onclick="abrirPopup('#list-usuarios')"><img src="images/reportes.svg" alt="">Reportes</button>
+                <button class="btn-abrir-popup" onclick="abrirPopup('#list-usuarios')"><img src="images/Iconos/reportes.png" alt="">Reportes</button>
         </div>
         
     </div>

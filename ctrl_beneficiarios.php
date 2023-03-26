@@ -37,13 +37,13 @@ if($perfilUsr == 'moderador'){
 </style>
 <div class="content__menu-principal">
        <div class="content__menu-principal__button">
-            <button class="btn-abrir-popup" onclick="abrirPopup('#list-apoyos-pendientes')"><img src="images/apoyosPendientes.svg" alt="">Apoyos Pendientes</button>
+            <button class="btn-abrir-popup" onclick="abrirPopup('#list-apoyos-pendientes')"><img src="images/Iconos/apoyos-pendientes.png" alt="">Apoyos Pendientes</button>
        </div>
        <div class="content__menu-principal__button">
-            <button class="btnPop-lstaff" onclick="abrirPopup('#list-apoyos-autorizados')"><img src="images/apoyosAutorizados.svg" alt="">Apoyos Autorizados</button>
+            <button class="btnPop-lstaff" onclick="abrirPopup('#list-apoyos-autorizados')"><img src="images/Iconos/apoyos-aprobados.png" alt="">Apoyos Autorizados</button>
        </div>
        <div class="content__menu-principal__button">
-            <button class="btnPop-lstaff" onclick="abrirPopup('#list-apoyos-rechazados')"><img src="images/apoyosRechazados.svg" alt="">Apoyos Rechazados</button>
+            <button class="btnPop-lstaff" onclick="abrirPopup('#list-apoyos-rechazados')"><img src="images/Iconos/apoyos-rechazados.png" alt="">Apoyos Rechazados</button>
        </div>
       
   </div>

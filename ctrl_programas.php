@@ -36,7 +36,7 @@ if($perfilUsr == 'moderador'){
 </style>
 <div class="content__menu-principal">
   <div class="content__menu-principal__button">
-     <button class="btn-abrir-popup" onclick="abrirPopup('#RegPrograms')"><img src="/images/Iconos/add-user.png" alt="">Registrar Programa</button>
+     <button class="btn-abrir-popup" onclick="abrirPopup('#RegPrograms')"><img src="/images/Iconos/registrar-progarmas.png" alt="">Registrar Programa</button>
   </div>
   <div class="content__menu-principal__button">
      <button class="btnPop-lstaff" onclick="abrirPopup('#ListPrograms')"><img src="/images/Iconos/edit-user.png" alt="">Ver/Editar Programas</button>
