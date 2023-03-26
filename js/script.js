@@ -2,6 +2,21 @@ function regresar(){
     window.history.back();
 }
 
+var selectReport = document.querySelector('#verReporte');
+selectReport.addEventListener('click',function(){
+    var miSelect = document.getElementById("select_report");
+    var opcionSeleccionada = miSelect.value;
+    
+    if(opcionSeleccionada == "beneficiarios"){
+        document.querySelector('#verReporte').href="reports/report-beneficiarios.php";
+    }
+    if(opcionSeleccionada == "benefactores"){
+        document.querySelector('#verReporte').href="reports/report-benefactores.php";
+    }
+    
+});
+
+
 function confirmacion(){
     var decision = confirm("¿Son correctos los datos?");    
     if(decision==true){
