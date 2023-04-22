@@ -4,14 +4,14 @@ include './components/header.php';
 include 'model/conexion.php'
 
 ?>
-   <div class="title__box">
+  <div class="title__box">
     <h2 class="title__box__title">Tienda</h2>
     <div class="title__box__usr">
     </div>
-</div>
+  </div>
 
 <div class="content">
-<div class="content__tienda">
+  <div class="content__tienda">
     <?php
       $consulta = $bd->query("SELECT id_producto, descripcion, observaciones, precio, existencia, imagen, tipoimagen FROM catalogo;");
       $producto = $consulta->fetchAll(PDO::FETCH_OBJ);
@@ -28,8 +28,8 @@ include 'model/conexion.php'
         <p class="content__tienda_box-hora">$<?php  echo $dato->precio?></p>
       <?php 
       $existencia = $dato->existencia;
-      if($existencia<=0){
-        echo "No disponible";
+      if($existencia <= 5){
+        echo " No Disponible";
       }else{?>
       <button class="btn-abrir-popup content__form__box-cta" onclick="abrirPopup('#comprar-<?php echo $dato->id_producto?>')">Comprar</button>
         <div class="overlay">
@@ -113,6 +113,7 @@ include 'model/conexion.php'
                     <p>$</p> 
                     <p class="content__tienda_box-form-details-text-precio" id="txt-precio"><?php echo $dato->precio?></p>
                      <p>MXN</p>
+                    
                     </div>
                    
                   </li>

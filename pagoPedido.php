@@ -6,6 +6,7 @@
 include 'components/head.php';
 //include_once 'components/permisos-menu.php';
 include './model/conexion.php';
+include './components/header.php';
 
  $pedido = $_GET['pedido'];
 ?>
@@ -24,10 +25,11 @@ include './model/conexion.php';
         </div>
     </div>
     <button class="btn-regresar" onclick="regresar()">Regresar</button>
+    <a class="btn-pagar" href="pasarela-pago.php?pedido=<?php echo $pedido?>">Pagar pedido</a>
 </div>
 <?php
 // }else{
 //     echo "Error en el Sistema";
 // }
-include './components/footer-staff.php';
+include './components/footer.php';
 ?>

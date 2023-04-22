@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="css/menu.css"/>
     <!-- <link rel="stylesheet" href="css/form.css"/> -->
     <link rel="stylesheet" href="css/table.css"/>
-
     <link rel="shortcut icon" href="/images/favicon.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://www.paypal.com/sdk/js?client-id=YFQKF6B4ZEVYQ"></script>
+
   </head>

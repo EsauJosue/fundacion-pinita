@@ -14,6 +14,22 @@
     border-radius: 20px;
     cursor: pointer;
 }
+.btn-pagar{
+    margin: 0px auto 20px auto;
+    width: 40%;
+    height: 45px;
+    background-color: @color-secondary;
+    color: @color-white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .user__box{
     width: 100%;
     display: flex;
@@ -60,7 +76,7 @@
 
     &__title{
       
-        width: 100%;
+        // width: 80%;
         text-align: center;
         padding: 5px 2px;
         font-size: 1.5rem;
@@ -112,6 +128,10 @@
     width: 90%;
     text-decoration: none;
     color: @color-white;
+}
+#paypal-button-container{
+    margin: 20px;
+    z-index: -1;
 }
 .content{
     width: 100vw;
@@ -186,7 +206,50 @@
             }
         }
     }
+    &__pasarela{
+        margin: 10px auto;
+        border: 2px solid @color-primary;
+        border-radius: 5px;
+        color: @color-text;
 
+        &_box{
+            strong{
+            }
+           &-titleProducto{
+                text-align: center;
+                border-bottom: 1px solid @color-text;
+            }
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            justify-content: center;
+           
+            &-pedido{
+                font-size: 2.4rem;
+            }
+            &-fecha{
+
+            }
+            &-nombreCliente{
+
+            }
+            &_producto{
+                display: flex;
+                overflow: hidden;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 5px;
+                padding: 5px;
+                &-imagen{
+                    width: 75px;
+                    height: auto;
+                }
+
+            }
+        }
+    }
     &__detailsBox{
         ul{
             // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -866,9 +929,7 @@ footer{
 
     }
     .footer__box{
-        position: absolute;
-            width: 100%;
-            bottom: 0;
+       
         &__body{
             display: flex;
             flex-direction: column;

@@ -2,6 +2,7 @@
 include './components/head.php';
 include './components/header.php';
 include 'model/conexion.php'
+
 ?>
 
 <div class="title__box">
@@ -36,4 +37,3 @@ include 'model/conexion.php'
         }
 include './components/footer.php';
 ?>
-Nuestra CDC is delighted to join our partner OppCo in sharing the exciting news that Kathy McGilvray will fill the role of OppCo CEO. Kathy’s experience at MHIC as a manager and leader in the community development finance sector and her deep knowledge of Masschusetts CDCs are strengths that will benefit OppCo’s next phase of growth and development.

@@ -13,6 +13,9 @@ selectReport.addEventListener('click',function(){
     if(opcionSeleccionada == "benefactores"){
         document.querySelector('#verReporte').href="reports/report-benefactores.php";
     }
+    if(opcionSeleccionada == "apoyos"){
+        document.querySelector('#verReporte').href="reports/report-apoyos.php";
+    }
     
 });
 

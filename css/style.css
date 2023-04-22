@@ -26,6 +26,28 @@ body {
   border-radius: 20px;
   cursor: pointer;
 }
+.btn-pagar {
+  margin: 0px auto 20px auto;
+  width: 40%;
+  height: 45px;
+  background-color: #ffb600;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .user__box {
   width: 100%;
   display: -webkit-box;
@@ -84,7 +106,6 @@ body {
   width: 25px;
 }
 .title__box__title {
-  width: 100%;
   text-align: center;
   padding: 5px 2px;
   font-size: 1.5rem;
@@ -156,6 +177,10 @@ body {
   width: 90%;
   text-decoration: none;
   color: #ffffff;
+}
+#paypal-button-container {
+  margin: 20px;
+  z-index: -1;
 }
 .content {
   width: 100vw;
@@ -259,6 +284,54 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 10px;
+}
+.content__pasarela {
+  margin: 10px auto;
+  border: 2px solid #009abf;
+  border-radius: 5px;
+  color: #4F4B49;
+}
+.content__pasarela_box {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.content__pasarela_box-titleProducto {
+  text-align: center;
+  border-bottom: 1px solid #4F4B49;
+}
+.content__pasarela_box-pedido {
+  font-size: 2.4rem;
+}
+.content__pasarela_box_producto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+.content__pasarela_box_producto-imagen {
+  width: 75px;
+  height: auto;
 }
 .content__detailsBox ul {
   display: -webkit-box;
@@ -1102,11 +1175,6 @@ footer .footer__header-icon img {
   width: 30px;
   height: auto;
   margin: 0 10px;
-}
-footer .footer__box {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
 }
 footer .footer__box__body {
   display: -webkit-box;
