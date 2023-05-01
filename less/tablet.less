@@ -1,6 +1,10 @@
 @import "globals.less";
 @import "variables.less";
 
+.overlay{
+    align-items: flex-start;
+    z-index: 2;
+}
 .title__box{
     max-width: 1110px;
     display: flex;
@@ -26,8 +30,24 @@
 
 .content{ 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 90%;
     margin-bottom: 45px;
+    &__blog{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        &_box{
+            border: 1px solid @color-text;
+            width: 225px;
+            height: 480px;
+            overflow: hidden;
+            margin: 10px;
+            justify-content: space-between;
+        }
+    }
     &__detailsBox{
         max-width: 1000px;
         padding: 20px;
@@ -74,12 +94,50 @@
     &__form{
         margin: 0 auto;
         padding-bottom: 0;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+        &__box{
+            &-label{
+
+            }
+        }
     }
     &__talleres{
         display: flex;
         flex-wrap: wrap;
         &_box{
             width: 200px;
+        }
+    }
+    &__tienda{
+        &_box{
+            width: 250px;
+            &-form{
+                padding: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas: "head head"
+                                      "costumer costumer" 
+                                      "address product";
+                                      &-head{
+                                        grid-area: head;
+                                        display: flex;
+                                      }
+                                      &-costumer{
+                                        grid-area: costumer;
+                                      }
+                                      &-address{
+                                        grid-area: address;
+
+                                      }
+                                      &-product{
+                                        grid-area: product;
+                                      }
+                
+                }
         }
     }
 }

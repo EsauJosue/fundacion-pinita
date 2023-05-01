@@ -18,7 +18,8 @@ include './components/header.php';
   <form action="insert_registro.php" class="content__form" method="POST">
       <div class="content__form__box">
           <label class="content__form__box-label" for="txtUser">Usuario: </label>
-          <input type="text" placeholder="Ingrese su usaurio" name="usuario" class="content__form__box-input" id="txtUser" required maxlength="12">
+          <span class="content__form__box-span">Inrese un nombre de usuario de máximo 12 caracteres con el que podrá iniciar sesión.</span>
+          <input type="text" placeholder="Ingrese su usuario" name="usuario" class="content__form__box-input" id="txtUser" required maxlength="12">
       </div>
       <div class="content__form__box">
           <label class="content__form__box-label" for="txtNombre">Nombre Completo: </label>
@@ -42,6 +43,7 @@ include './components/header.php';
       </div>
       <div class="content__form__box">
           <label class="content__form__box-label" for="selectTipoUser"">Tipo de Usuario: </label>
+          <span class="content__form__box-span">Seleccione la opción que más se adapte a su perfil. </span>
           <select name="tipoUsuario" class="content__form__box-input" id="selectTipoUser">
             <option value="beneficiario">Beneficiario</option>
             <option value="benefactor" >Benefactor</option>
@@ -55,6 +57,7 @@ include './components/header.php';
       </div>
       <div class="content__form__box">
           <label class="content__form__box-label" for="txtPass1">Password: </label>
+          <span class="content__form__box-span">La contraseña debe contener al menos una mayuscula, una minuscula, un caracter especial y un número. Debe tener entre 8 y 12 caracteres</span>
           <input type="password" placeholder="Password hasta 12 caracteres" name="password1" class="content__form__box-input" id="txtPass1" required maxlength="12">
       </div>
       <div class="content__form__box">
@@ -64,6 +67,7 @@ include './components/header.php';
       <input type="hidden" name="oculto" value=1>
       <div class="content__form__box">
           <button type="submit" value="" class="content__form__box-cta">Registrar</button>
+          <a href="#" id="btn-cerrar-popup-bottom" onclick="regresar()">Cancelar</a>
       </div>
   </form>
 </div>

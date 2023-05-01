@@ -13,7 +13,7 @@ include 'model/conexion.php';
 $sentencia = $bd->prepare("DELETE FROM catalogo WHERE id_producto = ?;");
 $resultado = $sentencia->execute([$producto]);
 if($resultado === TRUE){
-    header('Location: ctrl_ventas.php');
+    header('Location: notificacion-confirmacion.php');
 }
 }else{
     echo "Error en el Sistema";

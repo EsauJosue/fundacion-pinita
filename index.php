@@ -28,12 +28,12 @@ include 'model/conexion.php'
 
             <a class="content__blog_box-link" href="single.php?id=<?php echo $dato->id_post?>">Ver más...</a>
         </div>
-
+<?php }?>
     </div>
 </div>
    
      
 <?php
-        }
+        
 include './components/footer.php';
 ?>

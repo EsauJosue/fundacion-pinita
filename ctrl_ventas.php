@@ -5,7 +5,8 @@ if(!isset($_SESSION['usuario'])){
 }elseif(isset($_SESSION['usuario'])){
 include 'components/head.php';
 include_once 'components/permisos-menu.php';
-include './model/conexion.php'
+include './model/conexion.php';
+include 'confirm.php';
 
 ?>
  <div class="title__box">
@@ -64,7 +65,7 @@ if($perfilUsr == 'moderador'){
     <div class="overlay">
     <div class="content__list__mobile" id="e-pedidos">
             <?php 
-                $consulta = $bd->query("SELECT * FROM pedidos ORDER BY id_pedido");
+                $consulta = $bd->query("SELECT id_pedido,fecha,total,estatus FROM pedidos ORDER BY id_pedido");
                 $apoyos = $consulta->fetchAll(PDO::FETCH_OBJ);
             ?>
         <section class="content__list__mobile__section" >
@@ -81,13 +82,11 @@ if($perfilUsr == 'moderador'){
                     <tr>
                     <th>Pedido</th>
                     <th>Fecha</th>
-                    <th>Cliente</th>
-                    <th>Envio</th>
                     <th>Total</th>
-                    <th>Observaciones</th>
+                    <th>Estatus</th>
                     <th>Surtir</th>
-                    <th>Rechazar</th>
-                    <th>Ver Información</th>
+                    <th>Cancelar</th>
+                    <th>Ver</th>
                     </tr>
                 </thead>
                 <?php
@@ -97,14 +96,11 @@ if($perfilUsr == 'moderador'){
                             <tr>
                                 <td><?php echo $dato->id_pedido ?></td>
                                 <td><?php echo $dato->fecha ?></td>
-                                <td><?php echo $dato->nombreCliente ?></td>
-                                <td><?php echo $dato->direccion_envio ?></td>
                                 <td><?php echo $dato->total ?></td>
-                                <td width="50px"><?php echo $dato->observaciones ?></td>
                                 <td><?php echo $dato->estatus ?></td>
                                 <td><a href="#?id=<?php echo $dato->id_usuario?>"><img src="/images/aceptado.svg" alt=""></a></td>
-                                <td><a href="#?id=<?php echo $dato->id_usuario?>"><img src="/images/delete.svg" alt=""></a></td>
-                                <td><a href="verBeneficiario.php?id=<?php echo $dato->id_usuario?>"><img src="/images/information.svg" alt=""></a></td>
+                                <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deletePedido.php?id=','<?php echo $dato->id_pedido;?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
+                                <td><a href="verPedido.php?id=<?php echo $dato->id_pedido?>"><img src="/images/information.svg" alt=""></a></td>
                             </tr>
                         </tbody>
                     <?php
@@ -153,6 +149,9 @@ if($perfilUsr == 'moderador'){
                 <input type="hidden" name="oculto" value=1>
                 <div class="content__form__box">
                     <button type="submit" value="" class="content__form__box-cta" name="guardar" onclick="return confirmacion()">Registrar</button>
+                    <a href="#" id="btn-cerrar-popup-bottom" onclick="cerrarPopup('#e-productos')">Cancelar</a>
+
+
                 </div>
             </form>
         </div>
@@ -208,7 +207,7 @@ if($perfilUsr == 'moderador'){
                             </td> -->
                             <td><a href="#"><img src="/images/information.svg" alt=""></a></td>
                             <td><a href="editProducto.php?id=<?php echo $dato->id_producto?>"><img src="/images/edit.svg" alt=""></a></td>
-                            <td><a href="deleteProducto.php?id=<?php echo $dato->id_producto?>"><img src="/images/delete.svg" alt=""></a></td>
+                            <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deleteProducto.php?id=','<?php echo $dato->id_producto?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
                         </tr>
                     </tbody>
                 <?php
@@ -220,9 +219,7 @@ if($perfilUsr == 'moderador'){
         <?php
           }
           ?>
-        <?php
-          include 'footer.php';
-        ?>
+       
         </div>
     </div>
     

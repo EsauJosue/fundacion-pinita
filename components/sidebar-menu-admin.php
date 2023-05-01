@@ -15,6 +15,11 @@
       <img src="/images/Iconos/online-shop.png" alt="">Ecommerce
     </a>
   </li>
+  <li class="sidebar-menu__buttons__items-item" id="item-benefactores">
+    <a href="/ctrl_benefactores.php">
+      <img src="/images/Iconos/help.png" alt="">Control Benefactores
+    </a>
+  </li>
   <li class="sidebar-menu__buttons__items-item" id="item-programas">
     <a href="/ctrl_programas.php">
       <img src="/images/Iconos/social.png" alt="">Programas Sociales
@@ -40,5 +45,6 @@
       <img src="/images/Iconos/group.png" alt="">Usuarios
     </a>
   </li>
+  
 </ul>
 </div>

@@ -6,16 +6,15 @@
 
 ?>
 <section class="content">
+<div class="content__operation">
     <?php
         if(!isset($_POST['oculto'])){
             exit();
         }
         include 'model/conexion.php';
-        $longPass = strlen($_REQUEST['password1']);
-        if($longPass < 8 || $longPass >12)
-            { 
-                echo 'La contraseña debe ser mayor a 8 caracteres y menor a 12'; 
-            }else{
+        $password = $_POST['password1'];
+        
+        if (preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,12}$/', $password)) {
                 $usuario = $_POST['usuario'];
                 $nombre = $_POST['nombre'];
                 $fnacimiento = $_POST['fnacimiento'];
@@ -32,14 +31,24 @@
                     $resultado = $sentencia->execute([$usuario,$pass,$nombre,$nacionalidad,$fnacimiento,$domicilio,$telefono,$tipoUsr,$observaciones]);
                     if($resultado === TRUE){
                         echo "Se ha guardado correctamente el usuario: ".$usuario;
+                        ?>
+                            <a href="http://localhost:8888/login.php" id="btn-cerrar-popup-bottom">Iniciar Sesión</a>
+                    <?php
                     }else{
                         echo "Ocurrio un error o el usuario ya existe. Favor de intentar más tarde o cambiar el usuario.";
                     }
                 }else{
                     echo 'Las contraseñas no coinciden';
                 }
+            }else {
+                echo "La contraseña no cumple con los requisitos, favor de ingresar una contraseña válida.";
+                ?>
+                    <a href="#" id="btn-cerrar-popup-bottom" onclick="regresar()">Regresar</a>
+                <?php
             }
+
     ?>
+     </div>
 </section>
 
 <?php include 'components/footer.php';?>

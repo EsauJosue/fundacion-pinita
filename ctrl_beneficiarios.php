@@ -5,7 +5,7 @@ if(!isset($_SESSION['usuario'])){
 }elseif(isset($_SESSION['usuario'])){
 include 'components/head.php';
 include_once 'components/permisos-menu.php';
-include './model/conexion.php'
+include './model/conexion.php';
 
 ?>
  <div class="title__box">
@@ -37,7 +37,7 @@ if($perfilUsr == 'moderador'){
 </style>
 <div class="content__menu-principal">
        <div class="content__menu-principal__button">
-            <button class="btn-abrir-popup" onclick="abrirPopup('#list-apoyos-pendientes')"><img src="images/Iconos/apoyos-pendientes.png" alt="">Apoyos Pendientes</button>
+            <button class="btn-abrir-popup" onclick="abrirPopup('#list-apoyos-pendientes')"><img src="images/Iconos/apoyos-pendientes.png" alt="">Solicitudes de apoyo</button>
        </div>
        <div class="content__menu-principal__button">
             <button class="btnPop-lstaff" onclick="abrirPopup('#list-apoyos-autorizados')"><img src="images/Iconos/apoyos-aprobados.png" alt="">Apoyos Autorizados</button>
@@ -91,7 +91,7 @@ if($perfilUsr == 'moderador'){
                               <td width="50px"><?php echo $dato->observaciones ?></td>
                               <td><a href="editCita.php?id=<?php echo $dato->id_usuario?>"><img src="/images/aceptado.svg" alt=""></a></td>
                               <td><a href="deleteCita.php?id=<?php echo $dato->id_usuario?>"><img src="/images/delete.svg" alt=""></a></td>
-                              <td><a href="verBeneficiario.php?id=<?php echo $dato->id_usuario?>"><img src="/images/information.svg" alt=""></a></td>
+                              <td><a href="verSolicitud.php?id=<?php echo $dato->id_solicitud?>"><img src="/images/information.svg" alt=""></a></td>
                           </tr>
                       </tbody>
                   <?php
@@ -155,7 +155,7 @@ if($perfilUsr == 'moderador'){
                               <!-- <td width="50px"><?php //echo $dato->observaciones ?></td> -->
                               <!-- <td><a href="editCita.php?id=<?php //echo $dato->id_usuario?>"><img src="/images/aceptado.svg" alt=""></a></td> -->
                               <!-- <td><a href="deleteCita.php?id=<?php //echo $dato->id_usuario?>"><img src="/images/delete.svg" alt=""></a></td> -->
-                              <td><a href="verBeneficiario.php?id=<?php echo $dato->id_usuario?>"><img src="/images/information.svg" alt=""></a></td>
+                              <td><a href="verSolicitud.php?id=<?php echo $dato->id_solicitud?>"><img src="/images/information.svg" alt=""></a></td>
                           </tr>
                       </tbody>
                   <?php
@@ -206,34 +206,40 @@ if($perfilUsr == 'moderador'){
                 </thead>
                 <?php
                   foreach ($apoyos as $dato){
+                    $solicitud = $dato->id_solicitud;
+
                       ?>
                       <tbody>
                           <tr>
-                              <td><?php echo $dato->id_solicitud ?></td>
+                              <td><?php echo $solicitud ?>
+                            </td>
                               <td><?php echo $dato->id_usuario ?></td>
                               <td><?php echo $dato->fecha ?></td>
-                              <!-- <td><?php //echo $dato->id_programa ?></td> -->
                               <td style="color: blue"><?php echo $dato->estatus ?></td>
-                              <!-- <td width="50px"><?php // echo $dato->observaciones ?></td> -->
-                              <td><a href="editCita.php?id=<?php echo $dato->id_usuario?>"><img src="/images/aceptado.svg" alt=""></a></td>
-                              <td><a href="deleteCita.php?id=<?php echo $dato->id_usuario?>"><img src="/images/delete.svg" alt=""></a></td>
-                              <td><a href="verBeneficiario.php?id=<?php echo $dato->id_usuario?>"><img src="/images/information.svg" alt=""></a></td>
+                              <td> 
+                                <a class="" href="#" onclick="abrirPopupConfirm('#confirm-update','acceptSolicitud.php?id=',<?php echo $solicitud?>,'Aceptar apoyo')"><img src="images/aceptado.svg" alt=""></a></td>
+                              
+                              <td>
+                                <a href="#" onclick="abrirPopupConfirm('#confirm-update','rejectSolicitud.php?id=',<?php echo $solicitud?>,'Rechazar Apoyo')"><img src="/images/delete.svg" alt=""></a></td>
+                              
+                              <td>
+                                <a href="verSolicitud.php?id=<?php echo $dato->id_solicitud?>"><img src="/images/information.svg" alt=""></a></td>
                           </tr>
                       </tbody>
                   <?php
                     }
+                    include 'confirm.php';
                   ?>  
               </table>
       </section>    
           <?php
             }
             ?>
-          <?php
-            include 'footer.php';
-          ?>
       </div>
   </div>
 </div>
+
+
 <div class="overlay">
   <div class="content__list" id="list-apoyos-rechazados">
       <?php 
@@ -278,7 +284,7 @@ if($perfilUsr == 'moderador'){
                               <!-- <td width="50px"><?php //echo $dato->observaciones ?></td> -->
                               <!-- <td><a href="editCita.php?id=<?php //echo $dato->id_usuario?>"><img src="/images/aceptado.svg" alt=""></a></td> -->
                               <!-- <td><a href="deleteCita.php?id=<?php //echo $dato->id_usuario?>"><img src="/images/delete.svg" alt=""></a></td> -->
-                              <td><a href="verBeneficiario.php?id=<?php echo $dato->id_usuario?>"><img src="/images/information.svg" alt=""></a></td>
+                              <td><a href="verSolicitud.php?id=<?php echo $dato->id_solicitud?>"><img src="/images/information.svg" alt=""></a></td>
                           </tr>
                       </tbody>
                   <?php

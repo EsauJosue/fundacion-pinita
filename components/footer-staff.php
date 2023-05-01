@@ -2,7 +2,7 @@
 <footer>
   <div class="footer__box">
     
-    <div class="footer__foot"> 
+    <div class="footer__foot footer__staff"> 
       <div class="rights">
         <p>FUNDACIÓN PINITA 2023</p>
       </div>

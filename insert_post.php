@@ -5,8 +5,10 @@ if(!isset($_SESSION['usuario'])){
 }elseif(isset($_SESSION['usuario'])){
 include 'components/head.php';
 include_once 'components/permisos-menu.php';
-include './model/conexion.php'
-
+include './model/conexion.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <?php
 if(!isset($_POST['oculto'])){
@@ -28,7 +30,7 @@ if(!isset($_POST['oculto'])){
                 header('Location: notificacion-archivoNoPermitido.php',true,303);
                 die();
 
-            }
+            }else{
             $nombreArchivo=$_FILES['foto']['name'];
             $consulta = $bd->prepare("INSERT INTO blogpost(titulo,extracto,contenido,imagen,tipoimagen,id_staff,fecha) VALUES (?,?,?,?,?,?,?);"); 
             $consulta->bindParam(1, $titulo, PDO::PARAM_STR,120);
@@ -40,7 +42,19 @@ if(!isset($_POST['oculto'])){
             $consulta->bindParam(7, $fecha, PDO::PARAM_STR);
             $consulta->execute();
             
-            header('Location: notificacion-confirmacion.php',true,303);
+            //header('Location: notificacion-confirmacion.php');
+            ?>
+            <div class="content">
+                <div class="content__confirmacion">
+                    <p>Se ha guardado con éxito el post</p>
+                    <a href="#" id="btn-cerrar-popup-bottom" onclick="regresar()">Regresar</a>
+
+                </div>
+            </div>
+            
+            <?php
+            }
+            
            
         }else{
             header('Location: notificacion-error.php',true,303);

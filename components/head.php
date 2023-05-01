@@ -16,6 +16,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
-    <script src="https://www.paypal.com/sdk/js?client-id=YFQKF6B4ZEVYQ"></script>
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=YFQKF6B4ZEVYQ"></script> -->
 
   </head>

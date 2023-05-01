@@ -13,6 +13,12 @@ body {
 .hidden {
   display: none !important;
 }
+.overlay {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  z-index: 2;
+}
 .title__box {
   max-width: 1110px;
   display: -webkit-box;
@@ -46,11 +52,37 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 90%;
   margin-bottom: 45px;
+}
+.content__blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+.content__blog_box {
+  border: 1px solid #4F4B49;
+  width: 225px;
+  height: 480px;
+  overflow: hidden;
+  margin: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .content__detailsBox {
   max-width: 1000px;
@@ -106,6 +138,12 @@ body {
 .content__form {
   margin: 0 auto;
   padding-bottom: 0;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
 }
 .content__talleres {
   display: -webkit-box;
@@ -116,6 +154,44 @@ body {
 }
 .content__talleres_box {
   width: 200px;
+}
+.content__tienda_box {
+  width: 250px;
+}
+.content__tienda_box-form {
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
+      grid-template-areas: "head head" "costumer costumer" "product address";
+}
+.content__tienda_box-form-head {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: head;
+}
+.content__tienda_box-form-title {
+  grid-area: title;
+}
+.content__tienda_box-form-costumer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: costumer;
+}
+.content__tienda_box-form-address {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: address;
+}
+.content__tienda_box-form-product {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: product;
 }
 footer .footer__header__box {
   max-width: 1110px;

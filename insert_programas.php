@@ -17,7 +17,7 @@
                 $resultado = $sentencia->execute([$nombrePrograma,$detallePrograma,$encargado]);
                 if($resultado === TRUE){
                     echo "Se ha guardado correctamente el programa: ".$nombrePrograma;
-                    header('Location: ctrl_programas.php',true,303);
+                    header('Location: notificacion-confirmacion.php');
                 }else{
                     echo "Ocurrio un error o el programa ya existe. Favor de intentar más tarde o cambiar el usuario.";
                 }

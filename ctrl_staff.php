@@ -6,6 +6,7 @@ if(!isset($_SESSION['usuario'])){
 include 'components/head.php';
 include_once 'components/permisos-menu.php';
 include './model/conexion.php';
+include 'confirm.php';
 
 ?>
  <div class="title__box">
@@ -42,7 +43,7 @@ if($perfilUsr == 'moderador'){
        <div class="content__menu-principal__button">
             <button class="btnPop-lstaff" onclick="abrirPopup('#ListStaff')"><img src="/images/Iconos/edit-user.png" alt="">Ver/Editar Usuario</button>
        </div>
-    </div>
+    </div>  
     <div class="overlay">
         <div class="content__form" id="RegStaff">
             <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#RegStaff')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
@@ -76,8 +77,8 @@ if($perfilUsr == 'moderador'){
                 <input type="text" placeholder="Ingrese su domicilio" name="staff_domicilio" class="content__form__box-input" id="txtDomicilio" required>
             </div>
             <div class="content__form__box">
-                <label class="content__form__box-label" for="txtDomicilio">Email: </label>
-                <input type="email" placeholder="Ingrese su correo electrónico" name="staff_email" class="content__form__box-input" id="txtDomicilio" required>
+                <label class="content__form__box-label" for="txtEmail">Email: </label>
+                <input type="email" placeholder="Ingrese su correo electrónico" name="staff_email" class="content__form__box-input" id="txtEmail" required>
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtTelefono">Teléfono: </label>
@@ -89,7 +90,7 @@ if($perfilUsr == 'moderador'){
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtObservaciones">Cédula Profesional: </label>
-                <input type="text" placeholder="Observaciones del usuario" name="staff_cedula" class="content__form__box-input" id="txtCedula" required>
+                <input type="text" placeholder="Observaciones del usuario" name="staff_cedula" class="content__form__box-input" id="txtCedula">
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtObservaciones">Observaciones: </label>
@@ -97,6 +98,7 @@ if($perfilUsr == 'moderador'){
             </div>
             <div class="content__form__box">
                 <label class="content__form__box-label" for="txtPass1">Password: </label>
+                <span class="content__form__box-span">La contraseña debe contener al menos una mayuscula, una minuscula, un caracter especial y un número. Debe tener entre 8 y 12 caracteres</span>
                 <input type="password" placeholder="Password hasta 12 caracteres" name="password1" class="content__form__box-input" id="txtPass1" required maxlength="12">
             </div>
             <div class="content__form__box">
@@ -105,8 +107,9 @@ if($perfilUsr == 'moderador'){
             </div>
             <input type="hidden" name="oculto" value=1>
             <div class="content__form__box">
-                <button type="submit" value="" class="content__form__box-cta">Registrar</button>
-               
+                <button type="submit" value="" class="content__form__box-cta" id="registrarStaff">Registrar</button>
+                <a href="#" id="btn-cerrar-popup-bottom" onclick="cerrarPopup('#RegStaff')">Cancelar</a>
+                
             </div>
             </form>
 
@@ -146,7 +149,7 @@ if($perfilUsr == 'moderador'){
                                     <td><?php echo $dato->nombre ?></td>
                                     <td><?php echo $dato->perfil ?></td>
                                     <td><a href="editStaff.php?id=<?php echo $dato->id_staff?>"><img src="/images/edit.svg" alt=""></a></td>
-                                    <td><a href="deleteStaff.php?id=<?php echo $dato->id_staff?>"><img src="/images/delete.svg" alt=""></a></td>
+                                    <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deleteStaff.php?id=','<?php echo $dato->id_staff?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
                                 </tr>
                             </tbody>
                         <?php

@@ -13,7 +13,7 @@ include 'model/conexion.php';
 $sentencia = $bd->prepare("DELETE FROM programa_social WHERE id_programa = ?;");
 $resultado = $sentencia->execute([$programa]);
 if($resultado === TRUE){
-    header('Location: ctrl_programas.php');
+    header('Location: notificacion-confirmacion.php');
 }
 }else{
     echo "Error en el Sistema";

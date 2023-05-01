@@ -36,16 +36,6 @@ include 'model/conexion.php';
         }else{
             header('Location: notificacion-error.php');
         }
-            //if($consulta === TRUE){
-            //     header('Location: notificacion-confirmacion.php',true,303);
-            //    
-            // }else{
-
-            //     header('Location: notificacion-error.php',true,303);
-
-               
-            // }
-
     }
     
 ?>

@@ -5,7 +5,8 @@ if(!isset($_SESSION['usuario'])){
 }elseif(isset($_SESSION['usuario'])){
 include 'components/head.php';
 include_once 'components/permisos-menu.php';
-include './model/conexion.php'
+include './model/conexion.php';
+include 'confirm.php';
 
 ?>
  <div class="title__box">
@@ -47,7 +48,7 @@ include './model/conexion.php'
 <div class="overlay">
     <div class="content__form" id="RegTaller">
         <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#RegTaller')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
-        <form action="insert_eventos.php" class="content__form" method="POST">
+    <form action="insert_eventos.php" class="content__form" method="POST">
         <div class="content__form__box">
             <label class="content__form__box-label" for="txtNombre">Nombre del taller o conferencia: </label>
             <input type="text" placeholder="Ingrese el nombre del taller o conferencia" name="taller_nombre" class="content__form__box-input" id="txtNombre" required>
@@ -90,7 +91,7 @@ include './model/conexion.php'
             <input type="number" placeholder="Costo de entrada." name="taller_precio" class="content__form__box-input" id="txtPrecio" required>
         </div>
         <div class="content__form__box">
-            <label class="content__form__box-label" for="selectPonente"">Contacto: </label>
+            <label class="content__form__box-label" for="selectPonente">Contacto: </label>
             <select name="taller_contacto" class="content__form__box-input" id="selectPonente">
             <?php
                         $consulta = $bd->query("SELECT id_staff, nombre, telefono FROM staff;");
@@ -109,7 +110,8 @@ include './model/conexion.php'
         </div>
         <input type="hidden" name="oculto" value=1>
         <div class="content__form__box">
-            <button type="submit" value="" class="content__form__box-cta">Registrar el Evento</button>
+            <button type="submit" value="" class="content__form__box-cta" onclick="return confirmacion()">Registrar el Evento</button>
+            <a href="#" id="btn-cerrar-popup-bottom" onclick="cerrarPopup('#RegTaller')">Cerrar</a>
         </div>
         </form>
     </div>
@@ -157,8 +159,9 @@ include './model/conexion.php'
                             <td><?php echo $dato->lugar ?></td>
                             <!-- <td><?php //echo $dato->ponentes ?></td> -->
                             <!-- <td><?php //echo $dato->precio ?></td> -->
-                            <td><a href="editCita.php?id=<?php echo $dato->id_staff?>"><img src="/images/edit.svg" alt=""></a></td>
-                            <td><a href="deleteCita.php?id=<?php echo $dato->id_staff?>"><img src="/images/delete.svg" alt=""></a></td>
+                            <td><a href="editTaller.php?id=<?php echo $dato->id_taller?>"><img src="/images/edit.svg" alt=""></a></td>
+                            <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deleteTaller.php?id=','<?php echo $dato->id_taller?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
+                           
                         </tr>
                     </tbody>
                 <?php

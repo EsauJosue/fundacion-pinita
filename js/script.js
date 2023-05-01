@@ -3,30 +3,49 @@ function regresar(){
 }
 
 var selectReport = document.querySelector('#verReporte');
-selectReport.addEventListener('click',function(){
-    var miSelect = document.getElementById("select_report");
-    var opcionSeleccionada = miSelect.value;
-    
-    if(opcionSeleccionada == "beneficiarios"){
-        document.querySelector('#verReporte').href="reports/report-beneficiarios.php";
-    }
-    if(opcionSeleccionada == "benefactores"){
-        document.querySelector('#verReporte').href="reports/report-benefactores.php";
-    }
-    if(opcionSeleccionada == "apoyos"){
-        document.querySelector('#verReporte').href="reports/report-apoyos.php";
-    }
-    
-});
+if(selectReport){
+    selectReport.addEventListener('click',function(){
+        var miSelect = document.getElementById("select_report");
+        var opcionSeleccionada = miSelect.value;
+        
+        if(opcionSeleccionada == "beneficiarios"){
+            document.querySelector('#verReporte').href="reports/report-beneficiarios.php";
+        }
+        if(opcionSeleccionada == "benefactores"){
+            document.querySelector('#verReporte').href="reports/report-benefactores.php";
+        }
+        if(opcionSeleccionada == "apoyos"){
+            document.querySelector('#verReporte').href="reports/report-apoyos.php";
+        }
+        
+    });
+}
+var registroStaff = document.querySelector('#registrarStaff');
+if(registroStaff){
+    registroStaff.addEventListener('click',function(){
 
-
-function confirmacion(){
-    var decision = confirm("¿Son correctos los datos?");    
-    if(decision==true){
+        const password = document.querySelector('#txtPass1').value;
+        console.log('dio click');
+        if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}$/.test(password)) {
+        console.log("La contraseña cumple con los requisitos");
         return true;
-    }else{ 
-       return false; 
-    }
+        } else {
+        console.log("La contraseña no cumple con los requisitos");
+        return false;
+        
+        }
+    
+    });
+}
+
+function passAdmin(){
+    alert('Hola');
+ var contraseña = prompt('Ingrese la contraseña de administrador');
+ if(contraseña == '123456789'){
+    return true;
+ }else{
+    return false;
+ }
 }
 
 function abrirPopup(element){
@@ -37,6 +56,50 @@ function abrirPopup(element){
     overlay.classList.add('active');
 }
 
+function abrirPopupConfirm(element,phpurl,id,tipoop){
+
+    const popup = document.querySelector(element);
+    const overlay = popup.closest('.overlay');
+    popup.classList.add('popup');
+    popup.classList.add('active');
+    overlay.classList.add('active');
+    overlay.style.zIndex=9999;
+    const div = document.querySelector('.content__confirm__box-body-buttons');
+    const elemento = document.querySelector('.content__confirm__box-body-buttons-ok');
+    const operacion = document.querySelector('.content__confirm__box-body-operation');
+    const tipo_op = document.querySelector('.content__confirm__box-body-operation-tipo');
+    if(!elemento){
+        const link = document.createElement("a");
+        link.classList.add('content__confirm__box-body-buttons-ok');
+        link.textContent="Confirmar";
+        link.href= phpurl + id;
+        div.appendChild(link);
+
+    }
+    if(!tipo_op){
+     const tipo = document.createElement("p");
+     tipo.classList.add('content__confirm__box-body-operation-tipo');
+     tipo.textContent=tipoop;
+     operacion.appendChild(tipo);
+        if(tipoop == 'Eliminar Registro' || tipoop == 'Rechazar Apoyo'){
+         tipo.style.color = '#cf050c';
+        }else{
+         tipo.style.color = '#009abf';
+        }
+    }  else{
+        tipo_op.remove();
+        abrirPopupConfirm(element,phpurl,id,tipoop);
+    }
+     
+}
+function confirmacion(){
+    var decision = confirm("¿Son correctos los datos?");    
+    if(decision==true){
+        return true;
+    }else{ 
+       return false; 
+    }
+}
 function cerrarPopup(element){
    
         const popup = document.querySelector(element);

@@ -5,7 +5,8 @@ if(!isset($_SESSION['usuario'])){
 }elseif(isset($_SESSION['usuario'])){
 include 'components/head.php';
 include_once 'components/permisos-menu.php';
-include './model/conexion.php'
+include './model/conexion.php';
+include 'confirm.php';
 
 ?>
  <div class="title__box">
@@ -42,6 +43,8 @@ if($perfilUsr == 'moderador'){
      <button class="btnPop-lstaff" onclick="abrirPopup('#ListPrograms')"><img src="/images/Iconos/edit-user.png" alt="">Ver/Editar Programas</button>
   </div>
 </div>
+
+<!-- Registrar -->
 <div class="overlay">
   <div class="content__form" id="RegPrograms">
   <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#RegPrograms')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
@@ -71,12 +74,13 @@ if($perfilUsr == 'moderador'){
         </div>
         <input type="hidden" name="oculto" value=1>
         <div class="content__form__box">
-            <button type="submit" value="" class="content__form__box-cta">Registrar Programa</button>
+            <button type="submit" value="" class="content__form__box-cta" onclick="return confirmacion()">Registrar Programa</button>
+            <a href="#" id="btn-cerrar-popup-bottom" onclick="cerrarPopup('#RegPrograms')">Cancelar</a>
         </div>
     </form>
   </div>
 </div>
- 
+ <!-- Listado -->
 <div class="overlay">
   <div class="content__list" id="ListPrograms">
       <?php 
@@ -114,7 +118,7 @@ if($perfilUsr == 'moderador'){
                               <!-- <td><?php //echo $dato->detalles ?></td> -->
                               <td><?php echo $dato->id_staff ?></td>
                               <td><a href="editProgramas.php?id=<?php echo $dato->id_programa?>"><img src="/images/edit.svg" alt=""></a></td>
-                              <td><a href="deleteProgramas.php?id=<?php echo $dato->id_programa?>"><img src="/images/delete.svg" alt=""></a></td>
+                              <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deleteProgramas.php?id=','<?php echo $dato->id_programa?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
                           </tr>
                       </tbody>
                   <?php

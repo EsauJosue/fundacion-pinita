@@ -125,9 +125,20 @@
 }
 #btn-cerrar-popup-bottom{
     background-color: @color-primary;
-    width: 90%;
     text-decoration: none;
     color: @color-white;
+    margin: 20px auto;
+    font-family: inherit;
+    border: none;
+    padding: .7em 0;
+    border-radius: .4em;
+    cursor: pointer;
+    font-weight: @font-semibold;
+    margin: 10px auto;
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: center;
 }
 #paypal-button-container{
     margin: 20px;
@@ -143,6 +154,243 @@
     gap: 2px;
     font-size: 1.4rem;
     height: 100%;
+    color: @color-text;
+    &__pedido{
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    &__solicitud{
+        margin: 20px auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: flex-start;
+       
+       
+    }
+    &__confirmacion{
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__confirm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        &__box{
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            &-header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: linear-gradient(90deg, rgba(0,154,191,1) 35%, rgba(0,212,255,1) 100%);
+                color: white;
+                margin-bottom: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                p{
+                    font-size: 1.4rem;
+                    text-align: center;
+
+                }
+            }
+            &-body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                &-question{
+                    p{
+                        font-size: 1.4rem;
+                        color: @color-text;
+                        margin: 5px auto;
+                        text-align: left;
+                    }
+
+                }
+                &-operation{
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                    border-bottom: 2px solid #798499;
+                    padding: 5px;
+                   
+                    span{
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                    }
+                    p{
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                    }
+                }
+                &-buttons{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    &-ok{
+                        background: rgb(0,154,191);
+                        background: linear-gradient(90deg, rgba(0,154,191,1) 35%, rgba(0,212,255,1) 100%);
+                        color: @color-white;
+                        font-size: 1.4rem;
+                        padding: 5px 25px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                    }
+                    &-no{
+                        background: rgb(207,5,12);
+                        background: linear-gradient(90deg, rgba(207,5,12,1) 12%, rgba(111,14,3,1) 100%);
+                        color: @color-white;
+                        font-size: 1.4rem;
+                        padding: 5px 25px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                    }
+
+                }
+                &-buttonsdelete{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    &-ok{
+                        background: rgb(0,154,191);
+                        background: linear-gradient(90deg, rgba(0,154,191,1) 35%, rgba(0,212,255,1) 100%);
+                        color: @color-white;
+                        font-size: 1.4rem;
+                        padding: 5px 25px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                    }
+                    &-no{
+                        background: rgb(207,5,12);
+                        background: linear-gradient(90deg, rgba(207,5,12,1) 12%, rgba(111,14,3,1) 100%);
+                        color: @color-white;
+                        font-size: 1.4rem;
+                        padding: 5px 25px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                    }
+
+                }
+            }
+        }
+    }
+    &__operation{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+    }
+    &__contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px auto;
+        overflow: hidden;
+        gap: 20px;
+        h3{
+            border-bottom: 2px solid @color-primary;
+            padding: 10px 0;
+        }
+        img{
+            width: 100px;
+        }
+    }
+    &__fundacion{
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        gap: 20px;
+        h2{
+            border-bottom: 2px solid @color-primary;
+            padding: 5px 0;
+        }
+        p{
+            text-align: justify;
+            line-height: 2rem;
+            margin: 20px auto;
+        }
+        ul{
+            margin: 20px;
+            li{
+                margin: 10px auto;
+            }
+        }
+
+    }
+    &__single{
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &_box{
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow: hidden;
+            width: 90%;
+            border: 2px solid @color-primary;
+            border-radius: 10px;
+            &-title{
+                color: @color-text;
+                text-align: center;
+                color: @color-primary;
+
+
+            }
+            &-img{
+                width: 90%;
+                margin: 5px auto;
+            }
+            &-autor{
+                text-align: left;
+                margin:5px;
+            }
+            &-fecha{
+                text-align: left;
+                margin-bottom: 10px;
+                border-bottom: 1px solid @color-text;
+                margin:5px;
+                padding: 5px 0;
+                
+            }
+            &-contenido{
+                margin: 10px auto;
+                text-align: justify;
+                color: @color-text;
+                font-size: 1.6rem;
+                line-height: 2.5rem;
+            }
+
+        }
+    }
     &__blog{
         display: flex;
         flex-direction: column;
@@ -322,7 +570,8 @@
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
-        background-color: @color-primary;
+        background: rgb(0,154,191);
+        background: linear-gradient(90deg, rgba(0,154,191,1) 35%, rgba(0,212,255,1) 100%);
         border-radius: 10px 0 0 10px;
         width: 60%;
         padding: 20px;
@@ -529,8 +778,11 @@
                             gap: 10px;
                             width: 100%;
                             justify-content: space-between;
+                            align-items: center;
                             p{
                                 color: @color-text;
+                                width: 100%;
+                                text-align: justify;
                             }
                         }
                     }
@@ -648,6 +900,10 @@
                         td{
                             border-top: 1px solid @color-text;
                             height: 40px;
+                            margin: 2px 5px;
+                            img{
+                                width: 25px;
+                            }
 
                         }
                     }
@@ -722,13 +978,19 @@
         border-radius: 1em;
         padding: .5em 1.5em;
         &__box{
+
             width: 100%;
             display: grid;
             gap: 5px;
             grid-auto-columns: 100%;
-            margin: 10px;
+            margin: 10px auto;
+            &-span{
+                color: @color-text;
+                font-size: .9rem;
+            }
             &-label{
                 font-size: 1.4rem;
+                text-align: left;
             }
             &-input{
                 font-family: inherit;
@@ -760,7 +1022,8 @@
                 border-radius: .4em;
                 cursor: pointer;
                 font-weight: @font-semibold;
-                margin: 10px 35px;
+                margin: 10px auto;
+                width: 100%;
     
             }
             select{
@@ -829,6 +1092,7 @@
     justify-content: center;
     visibility: hidden;
     height: 100vh;
+    z-index: 1;
 
 
 }
@@ -1073,6 +1337,13 @@ footer{
            
             }
         }
+    }
+    .footer__staff{
+        position: absolute;
+        width: 100%;
+        //bottom: 0;
+        background: rgb(0,154,191);
+        background: linear-gradient(90deg, rgba(0,154,191,1) 35%, rgba(0,212,255,1) 100%);
     }
 
 }
