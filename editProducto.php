@@ -27,70 +27,42 @@ $producto = $sentencia->fetchAll(PDO::FETCH_OBJ);
      foreach ($producto as $dato){
         ?>
 
-<form action="updateProduct.php" class="content__form" method="POST">
+    <form action="updateProduct.php" class="content__form" method="POST" enctype="multipart/form-data" id="" accept-charset="utf-8">
         <div class="content__form__box">
-            <label class="content__form__box-label" for="txtUser">Clave: </label>
-            <input style="color: red;" type="text" name="catalogo-clave" class="content__form__box-input" id="txtUser" readonly="true" value="<?php echo $dato->id_producto?>">
+            <label class="content__form__box-label" for="txtClave">Clave: </label>
+            <input type="text" placeholder="Ingrese la clave del producto" name="clave-product" class="content__form__box-input" id="txtClave" required>
         </div>
         <div class="content__form__box">
             <label class="content__form__box-label" for="txtDescripcion">Descripción: </label>
-            <input type="text" placeholder="Ingrese su nombre completo" name="catalogo-descripcion" class="content__form__box-input" id="txtDescripcion" value="<?php echo $dato->descripcion?>" required>
+            <input type="text" placeholder="Descripción del producto" name="descripcion-product" class="content__form__box-input" id="txtDescripcion" required>
         </div>
         <div class="content__form__box">
-            <label class="content__form__box-label" for="txtObservaciones">Observaciones: </label>
-            <input type="text" name="catalogo-observaciones" class="content__form__box-input" id="txtObservaciones" required value="<?php echo $dato->observaciones?>">
+            <label class="content__form__box-label" for="txtDetalles">Detalles adicionales: </label>
+            <input type="text" placeholder="Descripción del producto" name="detalles-product" class="content__form__box-input observaciones" id="txtDetalles" required>
         </div>
         <div class="content__form__box">
             <label class="content__form__box-label" for="txtPrecio">Precio: </label>
-            <input type="text"  name="catalogo-precio" class="content__form__box-input" id="txtPrecio" required value="<?php echo $dato->precio?>">
+            <input type="number" placeholder="Descripción del producto" name="precio-product" class="content__form__box-input" id="txtPrecio" required>
         </div>
-            <div class="content__form__box">
+        <div class="content__form__box">
+            <label class="content__form__box-label " for="ctaImagen">Imagen: </label>
+            <input type="file" placeholder="" name="foto" class="cta-imagen" id="ctaImagen" accept="image/jpeg, image/png">
+        </div>
+        <div class="content__form__box">
             <label class="content__form__box-label" for="txtExistencia">Existencia: </label>
-            <input type="text" name="catalogo-existencia" class="content__form__box-input" id="txtExistencia" required value=" <?php echo $dato->existencia?>">
+            <input type="number" placeholder="Cantidad de producto existente" name="existencia-product" class="content__form__box-input input-" id="txtExistencia" required>
         </div>
-       <div class="content__form__box">
-            <label class="content__form__box-label" for="txtDomicilio">Email: </label>
-            <input type="email"  name="staff_email" class="content__form__box-input" id="txtDomicilio" required value="<?php //echo $dato->email?>">
-        </div>
-       <!--  <div class="content__form__box">
-            <label class="content__form__box-label" for="txtTelefono">Teléfono: </label>
-            <input type="tel"  name="staff_telefono" class="content__form__box-input" id="txtTelefono" required maxlength="10" value="<?php //echo $dato->telefono?>">
-        </div>
-        <div class="content__form__box">
-            <label class="content__form__box-label" for="txtObservaciones">Título Universitario: </label>
-            <input type="text"  name="staff_TituloUniversitario" class="content__form__box-input" id="txtTituloUniversitario" required value="<?php //echo $dato->titulo_universitario?>">
-        </div>
-        <div class="content__form__box">
-            <label class="content__form__box-label" for="txtObservaciones">Cédula Profesional: </label>
-            <input type="text"  name="staff_cedula" class="content__form__box-input" id="txtCedula" value="<?php //echo $dato->cedula?>" required>
-        </div>
-        <div class="content__form__box">
-            <label class="content__form__box-label" for="txtObservaciones">Observaciones: </label>
-            <input type="text"  name="staff_Observaciones" class="content__form__box-input input-observaciones" id="txtObservaciones" required value="<?php //echo $dato->observaciones?>">
-        </div>
-        <div class="content__form__box">
-            <label class="content__form__box-label" for="txtPass1">Password: </label>
-            <input type="password" placeholder="Password hasta 12 caracteres" name="password1" class="content__form__box-input" id="txtPass1" required maxlength="12">
-        </div>
-        <div class="content__form__box">
-            <label class="content__form__box-label" for="txtPass2">Confirmar Password: </label>
-            <input type="password" placeholder="Confirmar Password" name="password2" class="content__form__box-input" id="txtPass2" required maxlength="12">
-        </div> -->
         <input type="hidden" name="oculto" value=1>
         <div class="content__form__box">
-            <button type="submit" value="" class="content__form__box-cta">Modificar</button>
-
+            <button type="submit" value="" class="content__form__box-cta" name="guardar" onclick="return confirmacion()">Registrar</button>
+            <a href="#" id="btn-cerrar-popup-bottom" onclick="regresar()">Cancelar</a>
         </div>
-        </form>
-        <button type="" class="btn-regresar" value="" onclick="regresar()" class="content__form__box-cta">Regresar</button>
-
+    </form>
         <?php 
-        
+
      }
-     include './components/footer-staff.php';
 }else{
     echo "Error en el sistema";
-}   
-include './components/footer-staff.php';
+}  
 
         ?>

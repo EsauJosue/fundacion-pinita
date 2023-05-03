@@ -12,7 +12,7 @@
         $longPass = strlen($_REQUEST['password1']);
         if($longPass < 8 || $longPass >12)
             { 
-                echo 'La contraseña debe ser mayor a 8 caracteres y menor a 12'; 
+                header('Location: notificacion-error-password.php'); 
             }else{
                 $usuario = $_POST['staff_usuario'];
                 $nombre = $_POST['staff_nombre'];
@@ -33,12 +33,12 @@
                     $resultado = $sentencia->execute([$usuario,$pass,$nombre,$perfil,$domicilio,$email,$telefono,$fnacimiento,$nacionalidad,$observaciones,$tuniversitario,$cedula]);
                     if($resultado === TRUE){
                         echo "Se ha guardado correctamente el usuario: ".$usuario;
-                        header("Location: ctrl_staff.php", true, 303);
+                        header("Location: notificacion-confirmacion.php", true, 303);
                     }else{
                         echo "Ocurrio un error en la transacción o el usuario ya existe. Favor de intentar más tarde o cambiar el usuario.";
                     }
                 }else{
-                    echo 'Las contraseñas no coinciden';
+                    header('Location: notificacion-error-password.php'); 
                 }
             }
     ?>

@@ -5,6 +5,11 @@
           </a>
         </li>
         <li class="content__buttons__items-item">
+          <a href="/ctrl_benefactores.php">
+            <img src="/images/Iconos/help.png" alt="">Control Benefactores
+          </a>
+        </li>
+        <li class="content__buttons__items-item">
           <a href="/ctrl_blog.php">
             <img src="/images/Iconos/blogging.png" alt="">Blog
           </a>

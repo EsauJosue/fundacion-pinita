@@ -23,11 +23,7 @@ include './model/conexion.php'
             <h3>Error</h3>
         </div>
         <div class="content-box__message__text">
-            <p>Ocurrio un error al procesar la solicitud. Pude ser debido a los siguientes errores: </p>
-            <ul>
-                <li>Si esta ingresando un producto puede que la clave del producto ya exista</li>
-                <li>Revisar que el usuario tenga los permisos suficientes para realizar el registro del producto.</li>
-            </ul>
+            <p>Ocurrio un error al procesar la solicitud. Debe haber al menos un administrador en la base de datos. </p>
         </div>
     </div>
     <button class="btn-regresar" onclick="regresar()">Regresar</button>

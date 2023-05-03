@@ -3,6 +3,7 @@
 
 .overlay{
     align-items: flex-start;
+    justify-content: center;
     z-index: 2;
 }
 .title__box{
@@ -25,6 +26,61 @@
         font-size: 1.4rem;
         margin: 2px auto;
         width: 95%;
+    }
+}
+.form{
+ 
+    &__small{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+   
+        &__box{
+       
+            &__item{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 100%;
+                padding: 5px;
+                margin: 2px 0;
+                &-label{
+                    font-size: 1.4rem;
+                    text-align: left;
+                    margin: 5px;
+                }
+                &-input{
+                    font-size: 1.2rem;
+                    padding: .8em;
+                    outline: none;
+                    border: none;
+                    border: 1px solid #bbb0b0;
+                    border-radius: 0.4em;
+                    display: flex;
+                    align-items: flex-start;
+                    width: 300px;
+                 
+                }
+                ::placeholder{
+                    font-size: 1.2rem;     
+                }
+                &__input--message{
+                 
+                }
+                &-cta{
+          
+        
+                }
+                select{
+                    font-size: 1.2rem;
+                    option{
+                        font-size: 1.2rem;
+                    }
+                    margin: 0;
+                }
+            }
+
+        }
     }
 }
 
@@ -95,9 +151,10 @@
         margin: 0 auto;
         padding-bottom: 0;
         height: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2px;
+        width: 550px;
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // gap: 2px;∫
         &__box{
             &-label{
 
@@ -106,7 +163,7 @@
     }
     &__talleres{
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wr∫ap;
         &_box{
             width: 200px;
         }
@@ -139,6 +196,11 @@
                 
                 }
         }
+    }
+    &__confirm{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
 }
 footer{

@@ -63,58 +63,58 @@ if($perfilUsr == 'moderador'){
     </div>
     <!-- PEDIDOS -->
     <div class="overlay">
-    <div class="content__list__mobile" id="e-pedidos">
-            <?php 
-                $consulta = $bd->query("SELECT id_pedido,fecha,total,estatus FROM pedidos ORDER BY id_pedido");
-                $apoyos = $consulta->fetchAll(PDO::FETCH_OBJ);
-            ?>
-        <section class="content__list__mobile__section" >
-        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#e-pedidos')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
-
-        <h3>Pedidos</h3>
-            <?php 
-            if(!$apoyos){
-                echo 'No existen pedidos actualmente';
-            }else{
+        <div class="content__list__mobile" id="e-pedidos">
+                <?php 
+                    $consulta = $bd->query("SELECT id_pedido,fecha,total,estatus FROM pedidos ORDER BY id_pedido");
+                    $apoyos = $consulta->fetchAll(PDO::FETCH_OBJ);
                 ?>
-            <table class="content__list__mobile__section-table">
-                <thead>
-                    <tr>
-                    <th>Pedido</th>
-                    <th>Fecha</th>
-                    <th>Total</th>
-                    <th>Estatus</th>
-                    <th>Surtir</th>
-                    <th>Cancelar</th>
-                    <th>Ver</th>
-                    </tr>
-                </thead>
-                <?php
-                    foreach ($apoyos as $dato){
-                        ?>
-                        <tbody>
-                            <tr>
-                                <td><?php echo $dato->id_pedido ?></td>
-                                <td><?php echo $dato->fecha ?></td>
-                                <td><?php echo $dato->total ?></td>
-                                <td><?php echo $dato->estatus ?></td>
-                                <td><a href="#?id=<?php echo $dato->id_usuario?>"><img src="/images/aceptado.svg" alt=""></a></td>
-                                <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deletePedido.php?id=','<?php echo $dato->id_pedido;?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
-                                <td><a href="verPedido.php?id=<?php echo $dato->id_pedido?>"><img src="/images/information.svg" alt=""></a></td>
-                            </tr>
-                        </tbody>
+            <section class="content__list__mobile__section" >
+            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#e-pedidos')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
+
+            <h3>Pedidos</h3>
+                <?php 
+                if(!$apoyos){
+                    echo 'No existen pedidos actualmente';
+                }else{
+                    ?>
+                <table class="content__list__mobile__section-table">
+                    <thead>
+                        <tr>
+                        <th>Pedido</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Estatus</th>
+                        <th>Surtir</th>
+                        <th>Cancelar</th>
+                        <th>Ver</th>
+                        </tr>
+                    </thead>
                     <?php
-                    }
-                    ?>  
-                </table>
-        </section>    
-            <?php
-            }
-            ?>
-            <?php
-            include 'footer.php';
-            ?>
-    </div>
+                        foreach ($apoyos as $dato){
+                            ?>
+                            <tbody>
+                                <tr>
+                                    <td><?php echo $dato->id_pedido ?></td>
+                                    <td><?php echo $dato->fecha ?></td>
+                                    <td><?php echo $dato->total ?></td>
+                                    <td><?php echo $dato->estatus ?></td>
+                                    <td><a href="#?id=<?php echo $dato->id_usuario?>"><img src="/images/aceptado.svg" alt=""></a></td>
+                                    <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deletePedido.php?id=','<?php echo $dato->id_pedido;?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
+                                    <td><a href="verPedido.php?id=<?php echo $dato->id_pedido?>"><img src="/images/information.svg" alt=""></a></td>
+                                </tr>
+                            </tbody>
+                        <?php
+                        }
+                        ?>  
+                    </table>
+            </section>    
+                <?php
+                }
+                ?>
+                <?php
+                include 'footer.php';
+                ?>
+        </div>
     </div>
     <!-- REGISTRO DE PRODUCTOS -->
     <div class="overlay">
@@ -150,8 +150,6 @@ if($perfilUsr == 'moderador'){
                 <div class="content__form__box">
                     <button type="submit" value="" class="content__form__box-cta" name="guardar" onclick="return confirmacion()">Registrar</button>
                     <a href="#" id="btn-cerrar-popup-bottom" onclick="cerrarPopup('#e-productos')">Cancelar</a>
-
-
                 </div>
             </form>
         </div>

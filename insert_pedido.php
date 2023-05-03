@@ -42,9 +42,8 @@ if(!isset($_POST['oculto'])){
         $precio = $dato->precio;
         $descripcion = $dato->descripcion;
         $observaciones = $dato->observaciones;
-    
-     }
         $total = $precio * $cantidad; 
+
 
         $sentenciam = $bd->prepare("INSERT INTO pedidos(fecha,nombreCliente,telefono,email,calle,numero,fraccionamiento,ciudad,estado,cp,id_producto,cantidad,total,estatus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);"); 
         $res = $sentenciam->execute([$fecha,$nombreCliente,$telefono,$email,$calle,$numero,$fraccionamiento,$ciudad,$estado,$cp,$id_producto,$cantidad,$total,$status]);      
@@ -96,5 +95,9 @@ if(!isset($_POST['oculto'])){
             header('Location: notificacion-error.php',true,303);
            
         }
+    
+     }
+
+       
 ?>
 

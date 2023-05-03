@@ -5,7 +5,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 $aportacion = $_GET['id'];
-
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',14,'UTF-8');

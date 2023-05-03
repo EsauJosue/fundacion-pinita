@@ -117,7 +117,7 @@ if($perfilUsr == 'moderador'){
         $consulta = $bd->query("SELECT id_apoyo, id_usuario, tipo_apoyo, cantidad, divisa FROM reg_apoyos ORDER BY id_apoyo");
         $aportaciones = $consulta->fetchAll(PDO::FETCH_OBJ);
       ?>
-      <section class="content__list__section">
+      <section class="content__list__mobile__section">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#ListAportaciones')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
         <h3>Aportaciones Sociales</h3>
         <?php 
@@ -175,7 +175,7 @@ if($perfilUsr == 'moderador'){
         $consulta = $bd->query("SELECT usuario,nombre,telefono FROM usuarios WHERE perfil = 'benefactor' ORDER BY nombre");
         $programas = $consulta->fetchAll(PDO::FETCH_OBJ);
       ?>
-      <section class="content__list__section">
+      <section class="content__list__mobile__section">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#ListBenefactores')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
         <h3>Lista de Benefactores</h3>
         <?php 

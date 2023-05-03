@@ -45,66 +45,74 @@ if($perfilUsr == 'moderador'){
        </div>
     </div>  
     <div class="overlay">
-        <div class="content__form" id="RegStaff">
+        <div class="form" id="RegStaff">
             <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#RegStaff')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
-            <form action="insert_staff.php" class="content__form" method="POST">
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtUser">Usuario: </label>
-                <input type="text" placeholder="Ingrese su usuario" name="staff_usuario" class="content__form__box-input" id="txtUser" required maxlength="12">
+            <form action="insert_staff.php" class="form__small" method="POST">
+                <!-- Columna 1 -->
+                <div class="form__small__box">
+                    <div class="form__small__box__item">
+                        <label class="form__small__box__item-label" for="txtUser">Usuario: </label>
+                        <input type="text" placeholder="Ingrese su usuario" name="staff_usuario" class="form__small__box__item-input" id="txtUser" required maxlength="12">
+                    </div>
+                    <div class="form__small__box__item">
+                        <label class="form__small__box__item-label" for="txtNombre">Nombre Completo: </label>
+                        <input type="text" placeholder="Ingrese su nombre completo" name="staff_nombre" class="form__small__box__item-input" id="txtNombre" required>
+                    </div>
+                    <div class="form__small__box__item">
+                        <label class="form__small__box__item-label" for="selectTipoUser"">Perfil de Usuario: </label>
+                        <select name="staff_perfilUsuario" class="form__small__box__item-input" id="selectTipoUser">
+                            <option value="administrador">Administrador</option>
+                            <option value="moderador" >Moderador</option>
+                            <option value="profesional">Profesional</option>
+                        </select>
+                    </div>
+                    <div class="form__small__box__item">
+                        <label class="form__small__box__item-label" for="txtfnacimiento">Fecha de Nacimiento: </label>
+                        <input type="date" placeholder="Ingrese la fecha de nacimiento" name="staff_fnacimiento" class="form__small__box__item-input" id="txtfnacimiento" required>
+                    </div>
+                    <div class="form__small__box__item">
+                        <label class="form__small__box__item-label" for="txtNacionalidad">Nacionalidad: </label>
+                        <input type="text" placeholder="Ingrese su nacionalidad" name="staff_nacionalidad" class="form__small__box__item-input" id="txtNacionalidad" required>
+                    </div>
+                    <div class="form__small__box__item">
+                        <label class="form__small__box__item-label" for="txtDomicilio">Domicilio: </label>
+                        <input type="text" placeholder="Ingrese su domicilio" name="staff_domicilio" class="form__small__box__item-input" id="txtDomicilio" required>
+                    </div>
+                </div>
+            <!-- Columna 2 -->
+            <div class="form__small__box">
+                <div class="form__small__box__item">
+                    <label class="form__small__box__item-label" for="txtEmail">Email: </label>
+                    <input type="email" placeholder="Ingrese su correo electrónico" name="staff_email" class="form__small__box__item-input" id="txtEmail" required>
+                </div>
+                <div class="form__small__box__item">
+                    <label class="form__small__box__item-label" for="txtTelefono">Teléfono: </label>
+                    <input type="tel" placeholder="Ingrese su telefono a 10 digitos sin espacios" name="staff_telefono" class="form__small__box__item-input" id="txtTelefono" required maxlength="10">
+                </div>
+                <div class="form__small__box__item">
+                    <label class="form__small__box__item-label" for="txtObservaciones">Título Universitario: </label>
+                    <input type="text" placeholder="Si es profesional ingrese su Título" name="staff_TituloUniversitario" class="form__small__box__item-input" id="txtTituloUniversitario" required>
+                </div>
+                <div class="form__small__box__item">
+                    <label class="form__small__box__item-label" for="txtObservaciones">Cédula Profesional: </label>
+                    <input type="text" placeholder="Observaciones del usuario" name="staff_cedula" class="form__small__box__item-input" id="txtCedula">
+                </div>
+                <div class="form__small__box__item">
+                    <label class="form__small__box__item-label" for="txtObservaciones">Observaciones: </label>
+                    <input type="text" placeholder="Observaciones del usuario" name="staff_Observaciones" class="form__small__box__item-input input-observaciones" id="txtObservaciones" required>
+                </div>
+                <div class="form__small__box__item">
+                    <label class="form__small__box__item-label" for="txtPass1">Password: </label>
+                    <span class="form__small__box__item-span">La contraseña debe contener al menos una mayuscula, una minuscula, un caracter especial y un número. Debe tener entre 8 y 12 caracteres</span>
+                    <input type="password" placeholder="Password hasta 12 caracteres" name="password1" class="form__small__box__item-input" id="txtPass1" required maxlength="12">
+                </div>
+                <div class="form__small__box__item">
+                    <label class="form__small__box__item-label" for="txtPass2">Confirmar Password: </label>
+                    <input type="password" placeholder="Confirmar Password" name="password2" class="form__small__box__item-input" id="txtPass2" required maxlength="12">
+                </div>
+
             </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtNombre">Nombre Completo: </label>
-                <input type="text" placeholder="Ingrese su nombre completo" name="staff_nombre" class="content__form__box-input" id="txtNombre" required>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="selectTipoUser"">Perfil de Usuario: </label>
-                <select name="staff_perfilUsuario" class="content__form__box-input" id="selectTipoUser">
-                    <option value="administrador">Administrador</option>
-                    <option value="moderador" >Moderador</option>
-                    <option value="profesional">Profesional</option>
-                </select>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtfnacimiento">Fecha de Nacimiento: </label>
-                <input type="date" placeholder="Ingrese la fecha de nacimiento" name="staff_fnacimiento" class="content__form__box-input" id="txtfnacimiento" required>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtNacionalidad">Nacionalidad: </label>
-                <input type="text" placeholder="Ingrese su nacionalidad" name="staff_nacionalidad" class="content__form__box-input" id="txtNacionalidad" required>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtDomicilio">Domicilio: </label>
-                <input type="text" placeholder="Ingrese su domicilio" name="staff_domicilio" class="content__form__box-input" id="txtDomicilio" required>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtEmail">Email: </label>
-                <input type="email" placeholder="Ingrese su correo electrónico" name="staff_email" class="content__form__box-input" id="txtEmail" required>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtTelefono">Teléfono: </label>
-                <input type="tel" placeholder="Ingrese su telefono a 10 digitos sin espacios" name="staff_telefono" class="content__form__box-input" id="txtTelefono" required maxlength="10">
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtObservaciones">Título Universitario: </label>
-                <input type="text" placeholder="Observaciones del usuario" name="staff_TituloUniversitario" class="content__form__box-input" id="txtTituloUniversitario" required>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtObservaciones">Cédula Profesional: </label>
-                <input type="text" placeholder="Observaciones del usuario" name="staff_cedula" class="content__form__box-input" id="txtCedula">
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtObservaciones">Observaciones: </label>
-                <input type="text" placeholder="Observaciones del usuario" name="staff_Observaciones" class="content__form__box-input input-observaciones" id="txtObservaciones" required>
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtPass1">Password: </label>
-                <span class="content__form__box-span">La contraseña debe contener al menos una mayuscula, una minuscula, un caracter especial y un número. Debe tener entre 8 y 12 caracteres</span>
-                <input type="password" placeholder="Password hasta 12 caracteres" name="password1" class="content__form__box-input" id="txtPass1" required maxlength="12">
-            </div>
-            <div class="content__form__box">
-                <label class="content__form__box-label" for="txtPass2">Confirmar Password: </label>
-                <input type="password" placeholder="Confirmar Password" name="password2" class="content__form__box-input" id="txtPass2" required maxlength="12">
-            </div>
+           
             <input type="hidden" name="oculto" value=1>
             <div class="content__form__box">
                 <button type="submit" value="" class="content__form__box-cta" id="registrarStaff">Registrar</button>
