@@ -203,7 +203,7 @@ if($perfilUsr == 'moderador'){
                                
                                 <img src="data:<?php //echo $dato->tipoimagen?>;charset=utf8;base64,<?php //echo $img;?>">
                             </td> -->
-                            <td><a href="#"><img src="/images/information.svg" alt=""></a></td>
+                            <td><a href="verProduct.php?id=<?php echo $dato->id_producto?>"><img src="/images/information.svg" alt=""></a></td>
                             <td><a href="editProducto.php?id=<?php echo $dato->id_producto?>"><img src="/images/edit.svg" alt=""></a></td>
                             <td><a href="#" onclick="abrirPopupConfirm('#confirm-update','deleteProducto.php?id=','<?php echo $dato->id_producto?>','Eliminar Registro')"><img src="/images/delete.svg" alt=""></a></td>
                         </tr>

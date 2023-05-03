@@ -87,7 +87,7 @@ if($perfilUsr == 'moderador'){
         $consulta = $bd->query("SELECT * FROM programa_social ORDER BY id_programa");
         $programas = $consulta->fetchAll(PDO::FETCH_OBJ);
       ?>
-      <section class="content__list__section">
+      <section class="content__list__mobile__section">
       <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarPopup('#ListPrograms')"><img src="/images/Iconos/xmark-solid.svg" alt=""></a>
         <h3>Programas Sociales</h3>
         <?php 
